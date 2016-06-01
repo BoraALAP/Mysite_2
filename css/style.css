@@ -13,14 +13,125 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "PT Sans", sans-serif;
-  color: #242322;
-  background-color: #ffffff;
+  font-family: "Lato", sans-serif;
+  color: #780001;
+  background-color: #6a6a6a;
+}
+
+html, body {
+  height: 100%;
 }
 
 a {
-  color: #a5c4bc;
+  color: #1e0001;
   text-decoration: none;
+}
+
+/* -------------------------------- 
+
+  Enterence
+
+-------------------------------- */
+.jumbotron {
+  height: 100%;
+  background-color: #FFFFFF;
+}
+
+.jumbotron-text {
+  padding-left: 10%;
+  position: fixed;
+  top: 30%;
+}
+
+.jumbotron h1 {
+  font-size: 10rem;
+  margin-bottom: 1.25rem;
+  font-weight: 900;
+  color: #780001;
+}
+
+.jumbotron h2 {
+  font-size: 5rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: #bfbfbf;
+}
+
+.jumbotron h3 {
+  font-size: 1.5em;
+}
+
+.skew-box {
+  -webkit-transform: skewY(-15deg);
+  -ms-transform: skewY(-15deg);
+  transform: skewY(-15deg);
+  /*  background-image: url(../img/img-1.jpg);*/
+  background-size: cover;
+  background: #780001;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(-45deg, #780001 0%, #1e0001 85%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: -45%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.skew-content img {
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 0.3;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+  -webkit-animation-name: imageanimation;
+          animation-name: imageanimation;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 220s;
+          animation-duration: 220s;
+}
+
+@-webkit-keyframes imageanimation {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(-8000px);
+            transform: translateY(-8000px);
+  }
+}
+
+@keyframes imageanimation {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(-8000px);
+            transform: translateY(-8000px);
+  }
+}
+.skew-content {
+  -webkit-transform: skewY(15deg);
+  -ms-transform: skewY(15deg);
+  transform: skewY(15deg);
+  color: #FFFFFF;
+  height: 100%;
+}
+.skew-content::before {
+  content: " ";
 }
 
 /* -------------------------------- 
@@ -29,23 +140,106 @@ Patterns - reusable parts of our design
 
 -------------------------------- */
 .cd-btn {
-  display: inline-block;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding: 1.6em 2.4em;
   font-size: 1.4rem;
   letter-spacing: .15em;
-  color: #ffffff;
+  color: #6a6a6a;
   font-weight: 700;
   text-transform: uppercase;
-  background-color: #a5c4bc;
+  background-color: #1e0001;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-transition: box-shadow 0.3s;
-  -moz-transition: box-shadow 0.3s;
-  transition: box-shadow 0.3s;
+  transition: all 0.3s;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: .75;
 }
 .no-touch .cd-btn:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+.cd-btn:nth-of-type(1) {
+  /*background-image: url(../img/img-1.jpg);*/
+  background: #2583e5;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(33deg, #2583e5 0%, #00529e 85%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+}
+.cd-btn:nth-of-type(2) {
+  /*background-image: url(../img/img-2.jpg);*/
+  background: #02eae5;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(33deg, #02eae5 0%, #009e9e 85%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+}
+.cd-btn:nth-of-type(3) {
+  /*background-image: url(../img/img-3.jpg);*/
+  background: #7c0202;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(33deg, #7c0202 0%, #a80000 85%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+}
+.cd-btn:nth-of-type(4) {
+  /*background-image: url(../img/img-1.jpg);*/
+  background: #00b792;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(33deg, #00b792 0%, #00e0b3 85%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+}
+.cd-btn:nth-of-type(5) {
+  /*background-image: url(../img/img-2.jpg);*/
+  background: #9100e0;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(33deg, #9100e0 0%, #7700b6 85%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+}
+.cd-btn:hover {
+  -webkit-flex-grow: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  opacity: 1.0;
 }
 
 /* -------------------------------- 
@@ -57,7 +251,7 @@ h1 {
   font-size: 2.6rem;
   line-height: 1;
   margin-bottom: 1em;
-  font-family: "IM Fell Double Pica", serif;
+  font-family: "Lato", sans-serif;
   font-style: italic;
 }
 @media only screen and (min-width: 768px) {
@@ -74,17 +268,22 @@ Main Content
 .cd-main-content {
   position: relative;
   z-index: 1;
-  width: 100%;
-  height: 100vh;
   /* vertically align its content */
-  display: table;
-  background-color: #e4dcca;
-}
-.cd-main-content .center {
-  /* vertically align inside parent element */
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  height: 100%;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
 }
 
 /* -------------------------------- 
@@ -92,7 +291,7 @@ Main Content
 Modal window 
 
 -------------------------------- */
-.cd-modal {
+.cd-modal1 {
   position: fixed;
   top: 0;
   left: 0;
@@ -100,26 +299,24 @@ Modal window
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background: #402f44 url(../img/modal-bg.jpg) no-repeat center center;
+  background: #bfbfbf url(../img/modal-bg.jpg) no-repeat center center;
   background-size: cover;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
-  -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
   transition: opacity 0.3s 0s, visibility 0s 0.3s;
 }
-.cd-modal .modal-content {
+.cd-modal1 .modal-content {
   height: 100%;
   overflow-y: auto;
   padding: 3em 5%;
-  color: #e4dcca;
+  color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.cd-modal h1 {
+.cd-modal1 h1 {
   text-align: center;
 }
-.cd-modal h1::after {
+.cd-modal1 h1::after {
   /* ink/brush separation */
   content: '';
   display: block;
@@ -128,12 +325,12 @@ Modal window
   background: url(../img/ink-separation.svg) no-repeat center center;
   margin: .2em auto 0;
 }
-.cd-modal p {
+.cd-modal1 p {
   line-height: 1.6;
   margin: 2em auto;
   max-width: 800px;
 }
-.cd-modal .modal-close {
+.cd-modal1 .modal-close {
   /* 'X' icon */
   position: absolute;
   z-index: 1;
@@ -150,49 +347,431 @@ Modal window
   visibility: hidden;
   opacity: 0;
   -webkit-transform: scale(0);
-  -moz-transform: scale(0);
   -ms-transform: scale(0);
-  -o-transform: scale(0);
   transform: scale(0);
-  -webkit-transition: -webkit-transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
-  -moz-transition: -moz-transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
+  transition: visibility 0s 0.3s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
   transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
 }
-.no-touch .cd-modal .modal-close:hover {
+.no-touch .cd-modal1 .modal-close:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
-.cd-modal.visible {
+.cd-modal1.visible {
   opacity: 1;
   visibility: visible;
-  -webkit-transition: opacity 0.7s, visibility 0s;
-  -moz-transition: opacity 0.7s, visibility 0s;
   transition: opacity 0.7s, visibility 0s;
 }
-.cd-modal.visible .modal-content {
+.cd-modal1.visible .modal-content {
   /* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
   -webkit-overflow-scrolling: touch;
 }
-.cd-modal.visible .modal-close {
+.cd-modal1.visible .modal-close {
   visibility: visible;
   opacity: 1;
-  -webkit-transition: -webkit-transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
-  -moz-transition: -moz-transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
+  transition: visibility 0s 0s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
   transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
   -webkit-transform: scale(1);
-  -moz-transform: scale(1);
   -ms-transform: scale(1);
-  -o-transform: scale(1);
   transform: scale(1);
 }
 @media only screen and (min-width: 1100px) {
-  .cd-modal .modal-content {
+  .cd-modal1 .modal-content {
     padding: 6em 5%;
   }
-  .cd-modal .modal-close {
+  .cd-modal1 .modal-close {
     height: 60px;
     width: 60px;
   }
-  .cd-modal p {
+  .cd-modal1 p {
+    font-size: 2rem;
+  }
+}
+
+.cd-modal2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #bfbfbf url(../img/modal-bg.jpg) no-repeat center center;
+  background-size: cover;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+}
+.cd-modal2 .modal-content {
+  height: 100%;
+  overflow-y: auto;
+  padding: 3em 5%;
+  color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.cd-modal2 h1 {
+  text-align: center;
+}
+.cd-modal2 h1::after {
+  /* ink/brush separation */
+  content: '';
+  display: block;
+  width: 130px;
+  height: 18px;
+  background: url(../img/ink-separation.svg) no-repeat center center;
+  margin: .2em auto 0;
+}
+.cd-modal2 p {
+  line-height: 1.6;
+  margin: 2em auto;
+  max-width: 800px;
+}
+.cd-modal2 .modal-close {
+  /* 'X' icon */
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  right: 5%;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3) url(../img/cd-icon-close.svg) no-repeat center center;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  transition: visibility 0s 0.3s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+}
+.no-touch .cd-modal2 .modal-close:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.cd-modal2.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.7s, visibility 0s;
+}
+.cd-modal2.visible .modal-content {
+  /* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
+  -webkit-overflow-scrolling: touch;
+}
+.cd-modal2.visible .modal-close {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s 0s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+@media only screen and (min-width: 1100px) {
+  .cd-modal2 .modal-content {
+    padding: 6em 5%;
+  }
+  .cd-modal2 .modal-close {
+    height: 60px;
+    width: 60px;
+  }
+  .cd-modal2 p {
+    font-size: 2rem;
+  }
+}
+
+.cd-modal3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #bfbfbf url(../img/modal-bg.jpg) no-repeat center center;
+  background-size: cover;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+}
+.cd-modal3 .modal-content {
+  height: 100%;
+  overflow-y: auto;
+  padding: 3em 5%;
+  color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.cd-modal3 h1 {
+  text-align: center;
+}
+.cd-modal3 h1::after {
+  /* ink/brush separation */
+  content: '';
+  display: block;
+  width: 130px;
+  height: 18px;
+  background: url(../img/ink-separation.svg) no-repeat center center;
+  margin: .2em auto 0;
+}
+.cd-modal3 p {
+  line-height: 1.6;
+  margin: 2em auto;
+  max-width: 800px;
+}
+.cd-modal3 .modal-close {
+  /* 'X' icon */
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  right: 5%;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3) url(../img/cd-icon-close.svg) no-repeat center center;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  transition: visibility 0s 0.3s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+}
+.no-touch .cd-modal3 .modal-close:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.cd-modal3.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.7s, visibility 0s;
+}
+.cd-modal3.visible .modal-content {
+  /* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
+  -webkit-overflow-scrolling: touch;
+}
+.cd-modal3.visible .modal-close {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s 0s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+@media only screen and (min-width: 1100px) {
+  .cd-modal3 .modal-content {
+    padding: 6em 5%;
+  }
+  .cd-modal3 .modal-close {
+    height: 60px;
+    width: 60px;
+  }
+  .cd-modal3 p {
+    font-size: 2rem;
+  }
+}
+
+.cd-modal4 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #bfbfbf url(../img/modal-bg.jpg) no-repeat center center;
+  background-size: cover;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+}
+.cd-modal4 .modal-content {
+  height: 100%;
+  overflow-y: auto;
+  padding: 3em 5%;
+  color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.cd-modal4 h1 {
+  text-align: center;
+}
+.cd-modal4 h1::after {
+  /* ink/brush separation */
+  content: '';
+  display: block;
+  width: 130px;
+  height: 18px;
+  background: url(../img/ink-separation.svg) no-repeat center center;
+  margin: .2em auto 0;
+}
+.cd-modal4 p {
+  line-height: 1.6;
+  margin: 2em auto;
+  max-width: 800px;
+}
+.cd-modal4 .modal-close {
+  /* 'X' icon */
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  right: 5%;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3) url(../img/cd-icon-close.svg) no-repeat center center;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  transition: visibility 0s 0.3s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+}
+.no-touch .cd-modal4 .modal-close:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.cd-modal4.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.7s, visibility 0s;
+}
+.cd-modal4.visible .modal-content {
+  /* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
+  -webkit-overflow-scrolling: touch;
+}
+.cd-modal4.visible .modal-close {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s 0s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+@media only screen and (min-width: 1100px) {
+  .cd-modal4 .modal-content {
+    padding: 6em 5%;
+  }
+  .cd-modal4 .modal-close {
+    height: 60px;
+    width: 60px;
+  }
+  .cd-modal4 p {
+    font-size: 2rem;
+  }
+}
+
+.cd-modal5 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #bfbfbf url(../img/modal-bg.jpg) no-repeat center center;
+  background-size: cover;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+}
+.cd-modal5 .modal-content {
+  height: 100%;
+  overflow-y: auto;
+  padding: 3em 5%;
+  color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.cd-modal5 h1 {
+  text-align: center;
+}
+.cd-modal5 h1::after {
+  /* ink/brush separation */
+  content: '';
+  display: block;
+  width: 130px;
+  height: 18px;
+  background: url(../img/ink-separation.svg) no-repeat center center;
+  margin: .2em auto 0;
+}
+.cd-modal5 p {
+  line-height: 1.6;
+  margin: 2em auto;
+  max-width: 800px;
+}
+.cd-modal5 .modal-close {
+  /* 'X' icon */
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  right: 5%;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3) url(../img/cd-icon-close.svg) no-repeat center center;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  transition: visibility 0s 0.3s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+}
+.no-touch .cd-modal5 .modal-close:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.cd-modal5.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.7s, visibility 0s;
+}
+.cd-modal5.visible .modal-content {
+  /* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
+  -webkit-overflow-scrolling: touch;
+}
+.cd-modal5.visible .modal-close {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s 0s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+@media only screen and (min-width: 1100px) {
+  .cd-modal5 .modal-content {
+    padding: 6em 5%;
+  }
+  .cd-modal5 .modal-close {
+    height: 60px;
+    width: 60px;
+  }
+  .cd-modal5 p {
     font-size: 2rem;
   }
 }
@@ -218,9 +797,7 @@ Transition Layer
   left: 50%;
   top: 50%;
   -webkit-transform: translateY(-50%) translateX(-2%);
-  -moz-transform: translateY(-50%) translateX(-2%);
   -ms-transform: translateY(-50%) translateX(-2%);
-  -o-transform: translateY(-50%) translateX(-2%);
   transform: translateY(-50%) translateX(-2%);
   /* its dimentions will be overwritten using jQuery to proportionally fit the viewport */
   height: 100%;
@@ -235,18 +812,14 @@ Transition Layer
 }
 .cd-transition-layer.opening .bg-layer {
   -webkit-animation: cd-sequence 0.8s steps(24);
-  -moz-animation: cd-sequence 0.8s steps(24);
   animation: cd-sequence 0.8s steps(24);
   -webkit-animation-fill-mode: forwards;
-  -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 .cd-transition-layer.closing .bg-layer {
   -webkit-animation: cd-sequence-reverse 0.8s steps(24);
-  -moz-animation: cd-sequence-reverse 0.8s steps(24);
   animation: cd-sequence-reverse 0.8s steps(24);
   -webkit-animation-fill-mode: forwards;
-  -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 .no-cssanimations .cd-transition-layer {
@@ -263,31 +836,17 @@ Transition Layer
     -webkit-transform: translateY(-50%) translateX(-98%);
   }
 }
-@-moz-keyframes cd-sequence {
-  0% {
-    /* translateX(-2%) is used to horizontally center the first frame inside the viewport */
-    -moz-transform: translateY(-50%) translateX(-2%);
-  }
-  100% {
-    /* translateX(-98%) (2% + 96) is used to horizontally center the last frame inside the viewport  */
-    -moz-transform: translateY(-50%) translateX(-98%);
-  }
-}
 @keyframes cd-sequence {
   0% {
     /* translateX(-2%) is used to horizontally center the first frame inside the viewport */
     -webkit-transform: translateY(-50%) translateX(-2%);
-    -moz-transform: translateY(-50%) translateX(-2%);
     -ms-transform: translateY(-50%) translateX(-2%);
-    -o-transform: translateY(-50%) translateX(-2%);
     transform: translateY(-50%) translateX(-2%);
   }
   100% {
     /* translateX(-98%) (2% + 96) is used to horizontally center the last frame inside the viewport  */
     -webkit-transform: translateY(-50%) translateX(-98%);
-    -moz-transform: translateY(-50%) translateX(-98%);
     -ms-transform: translateY(-50%) translateX(-98%);
-    -o-transform: translateY(-50%) translateX(-98%);
     transform: translateY(-50%) translateX(-98%);
   }
 }
@@ -299,27 +858,15 @@ Transition Layer
     -webkit-transform: translateY(-50%) translateX(-2%);
   }
 }
-@-moz-keyframes cd-sequence-reverse {
-  0% {
-    -moz-transform: translateY(-50%) translateX(-98%);
-  }
-  100% {
-    -moz-transform: translateY(-50%) translateX(-2%);
-  }
-}
 @keyframes cd-sequence-reverse {
   0% {
     -webkit-transform: translateY(-50%) translateX(-98%);
-    -moz-transform: translateY(-50%) translateX(-98%);
     -ms-transform: translateY(-50%) translateX(-98%);
-    -o-transform: translateY(-50%) translateX(-98%);
     transform: translateY(-50%) translateX(-98%);
   }
   100% {
     -webkit-transform: translateY(-50%) translateX(-2%);
-    -moz-transform: translateY(-50%) translateX(-2%);
     -ms-transform: translateY(-50%) translateX(-2%);
-    -o-transform: translateY(-50%) translateX(-2%);
     transform: translateY(-50%) translateX(-2%);
   }
 }

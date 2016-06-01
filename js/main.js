@@ -1,9 +1,29 @@
 jQuery(document).ready(function($){
 	//cache some jQuery objects
-	var modalTrigger = $('.cd-modal-trigger'),
+	var modalTrigger1 = $('.cd-modal-trigger1'),
 		transitionLayer = $('.cd-transition-layer'),
 		transitionBackground = transitionLayer.children(),
-		modalWindow = $('.cd-modal');
+		modalWindow1 = $('.cd-modal1');
+
+	var modalTrigger2 = $('.cd-modal-trigger2'),
+		transitionLayer = $('.cd-transition-layer'),
+		transitionBackground = transitionLayer.children(),
+		modalWindow2 = $('.cd-modal2');
+		
+	var modalTrigger3 = $('.cd-modal-trigger3'),
+		transitionLayer = $('.cd-transition-layer'),
+		transitionBackground = transitionLayer.children(),
+		modalWindow3 = $('.cd-modal3');
+		
+	var modalTrigger4 = $('.cd-modal-trigger4'),
+		transitionLayer = $('.cd-transition-layer'),
+		transitionBackground = transitionLayer.children(),
+		modalWindow4 = $('.cd-modal4');
+		
+	var modalTrigger5 = $('.cd-modal-trigger5'),
+		transitionLayer = $('.cd-transition-layer'),
+		transitionBackground = transitionLayer.children(),
+		modalWindow5 = $('.cd-modal5');				
 
 	var frameProportion = 1.78, //png frame aspect ratio
 		frames = 25, //number of png frames
@@ -19,20 +39,96 @@ jQuery(document).ready(function($){
 	});
 
 	//open modal window
-	modalTrigger.on('click', function(event){	
+	modalTrigger1.on('click', function(event){	
 		event.preventDefault();
 		transitionLayer.addClass('visible opening');
 		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
 		setTimeout(function(){
-			modalWindow.addClass('visible');
+			modalWindow1.addClass('visible');
+		}, delay);
+	});
+
+	modalTrigger2.on('click', function(event){	
+		event.preventDefault();
+		transitionLayer.addClass('visible opening');
+		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
+		setTimeout(function(){
+			modalWindow2.addClass('visible');
+		}, delay);
+	});
+
+	modalTrigger3.on('click', function(event){	
+		event.preventDefault();
+		transitionLayer.addClass('visible opening');
+		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
+		setTimeout(function(){
+			modalWindow3.addClass('visible');
+		}, delay);
+	});
+
+	modalTrigger4.on('click', function(event){	
+		event.preventDefault();
+		transitionLayer.addClass('visible opening');
+		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
+		setTimeout(function(){
+			modalWindow4.addClass('visible');
+		}, delay);
+	});
+
+	modalTrigger5.on('click', function(event){	
+		event.preventDefault();
+		transitionLayer.addClass('visible opening');
+		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
+		setTimeout(function(){
+			modalWindow5.addClass('visible');
 		}, delay);
 	});
 
 	//close modal window
-	modalWindow.on('click', '.modal-close', function(event){
+	modalWindow1.on('click', '.modal-close', function(event){
 		event.preventDefault();
 		transitionLayer.addClass('closing');
-		modalWindow.removeClass('visible');
+		modalWindow1.removeClass('visible');
+		transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
+			transitionLayer.removeClass('closing opening visible');
+			transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
+		});
+	});
+
+		modalWindow2.on('click', '.modal-close', function(event){
+		event.preventDefault();
+		transitionLayer.addClass('closing');
+		modalWindow2.removeClass('visible');
+		transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
+			transitionLayer.removeClass('closing opening visible');
+			transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
+		});
+	});
+
+			modalWindow3.on('click', '.modal-close', function(event){
+		event.preventDefault();
+		transitionLayer.addClass('closing');
+		modalWindow3.removeClass('visible');
+		transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
+			transitionLayer.removeClass('closing opening visible');
+			transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
+		});
+	});
+
+				modalWindow4.on('click', '.modal-close', function(event){
+		event.preventDefault();
+		transitionLayer.addClass('closing');
+		modalWindow4.removeClass('visible');
+		transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
+			transitionLayer.removeClass('closing opening visible');
+			transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
+		});
+	});
+
+					modalWindow5.on('click', '.modal-close', function(event){
+		event.preventDefault();
+		transitionLayer.addClass('closing');
+		modalWindow5.removeClass('visible');
 		transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
 			transitionLayer.removeClass('closing opening visible');
 			transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
