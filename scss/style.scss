@@ -55,22 +55,29 @@ a {
 .jumbotron-text{
   padding-left: 10%;
   position: fixed;
-  top: 30%;
+  top: 45%;
 }
 
 .jumbotron h1{
-  font-size: 10rem;
-  margin-bottom: 1.25rem;
-  font-weight: 900;
-  color: $color-1;
+  font: {
+  	size: 4rem;
+  	weight: 400;
+  	family: $secondary-font;
+  	style: normal;
+  } 
 
+  margin-bottom: 1.25rem;
+  color: $color-1;
 }
 
 .jumbotron h2{
-  font-size: 5rem; 
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
+  font: {
+  	size: 3rem; 
+  	family: $primary-font;
+  	weight: 400;
+  }
   color: $color-4;
+  letter-spacing: 10px;
 }
 
 .jumbotron h3{
@@ -91,19 +98,6 @@ a {
 
 }
 
-.skew-content img{
-    position: fixed;
-    left: 0;
-    top: 0;
-    opacity: 0.3;
-    box-sizing: border-box;
-    overflow: hidden;
-    width: 100%;
-    animation-name:imageanimation;
-    animation-iteration-count: infinite;
-    animation-duration: 220s;
-}
-
 @keyframes imageanimation {
     0% {
         transform: translateY(0px);
@@ -118,9 +112,23 @@ a {
   color: $color-5;
   height: 100%;
 
+
   &::before{
   	content:" ";
   }
+
+  & img{
+    position: fixed;
+    left: 0;
+    top: 0;
+    opacity: 0.3;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    animation-name:imageanimation;
+    animation-iteration-count: infinite;
+    animation-duration: 220s;
+}
 }
 
 
@@ -182,6 +190,7 @@ Patterns - reusable parts of our design
     &:hover{
     	flex-grow: 2;	
     	opacity: 1.0;
+    	color: $color-5;
     }
 }
 
@@ -741,6 +750,55 @@ Modal window
 		}
 	}
 }
+
+/* -------------------------------- 
+
+Bottom
+
+-------------------------------- */
+
+.bottom{
+	display: flex;
+	flex-direction: row;
+    background: $color-5;
+    height:100%;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+
+}
+
+.contact, .about, .headline {
+	display: flex;
+	align-items: center;
+	flex: 1;
+    padding: 5%;
+}
+
+.headline{
+	order: 1;
+	flex: 2 100%;
+	min-height: 10%;
+    @include linearGradient(45deg, darken(#d5d5d5,10%), darken(#fff,10%));
+    justify-content: center;
+
+}
+
+.contact{
+	order: 2;
+    @include linearGradient(45deg, #d5d5d5, #fff);
+}
+
+
+.about{
+	order: 3;
+    @include linearGradient(45deg, $color-1, darken($color-1, 10%));
+    color:#fff;
+}
+
+
+
 
 /* -------------------------------- 
 

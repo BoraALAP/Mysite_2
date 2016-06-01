@@ -13,7 +13,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "Lato", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   color: #780001;
   background-color: #6a6a6a;
 }
@@ -40,21 +40,24 @@ a {
 .jumbotron-text {
   padding-left: 10%;
   position: fixed;
-  top: 30%;
+  top: 45%;
 }
 
 .jumbotron h1 {
-  font-size: 10rem;
+  font-size: 4rem;
+  font-weight: 400;
+  font-family: "Roboto Slab", serif;
+  font-style: normal;
   margin-bottom: 1.25rem;
-  font-weight: 900;
   color: #780001;
 }
 
 .jumbotron h2 {
-  font-size: 5rem;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
+  font-size: 3rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
   color: #bfbfbf;
+  letter-spacing: 10px;
 }
 
 .jumbotron h3 {
@@ -84,22 +87,6 @@ a {
   bottom: -45%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-}
-
-.skew-content img {
-  position: fixed;
-  left: 0;
-  top: 0;
-  opacity: 0.3;
-  box-sizing: border-box;
-  overflow: hidden;
-  width: 100%;
-  -webkit-animation-name: imageanimation;
-          animation-name: imageanimation;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-duration: 220s;
-          animation-duration: 220s;
 }
 
 @-webkit-keyframes imageanimation {
@@ -132,6 +119,21 @@ a {
 }
 .skew-content::before {
   content: " ";
+}
+.skew-content img {
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 0.3;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+  -webkit-animation-name: imageanimation;
+          animation-name: imageanimation;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 220s;
+          animation-duration: 220s;
 }
 
 /* -------------------------------- 
@@ -240,6 +242,7 @@ Patterns - reusable parts of our design
       -ms-flex-positive: 2;
           flex-grow: 2;
   opacity: 1.0;
+  color: #FFFFFF;
 }
 
 /* -------------------------------- 
@@ -251,7 +254,7 @@ h1 {
   font-size: 2.6rem;
   line-height: 1;
   margin-bottom: 1em;
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto Slab", serif;
   font-style: italic;
 }
 @media only screen and (min-width: 768px) {
@@ -774,6 +777,101 @@ Modal window
   .cd-modal5 p {
     font-size: 2rem;
   }
+}
+
+/* -------------------------------- 
+
+Bottom
+
+-------------------------------- */
+.bottom {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background: #FFFFFF;
+  height: 100%;
+  position: relative;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.contact, .about, .headline {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 5%;
+}
+
+.headline {
+  -webkit-order: 1;
+      -ms-flex-order: 1;
+          order: 1;
+  -webkit-flex: 2 100%;
+      -ms-flex: 2 100%;
+          flex: 2 100%;
+  min-height: 10%;
+  background: #bcbcbc;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(45deg, #bcbcbc 0%, #e6e6e6 85%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact {
+  -webkit-order: 2;
+      -ms-flex-order: 2;
+          order: 2;
+  background: #d5d5d5;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(45deg, #d5d5d5 0%, #fff 85%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+}
+
+.about {
+  -webkit-order: 3;
+      -ms-flex-order: 3;
+          order: 3;
+  background: #780001;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(45deg, #780001 0%, #450001 85%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+  color: #fff;
 }
 
 /* -------------------------------- 
