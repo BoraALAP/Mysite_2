@@ -12,12 +12,16 @@ Primary style
 
 -------------------------------- */
 
+
+
 *, *::after, *::before {
 	box-sizing: border-box;
 }
 
 html {
 	font-size: 62.5%;
+
+	@include scrollbars(1rem, $color-1); 
 }
 
 body {
@@ -27,6 +31,7 @@ body {
 	}
 	color: $color-1;
 	background-color: $color-3;
+
 }
 
 html, body {
@@ -49,7 +54,7 @@ a {
 .jumbotron{
   height:100%;
 
-  @include linearGradient(-45deg, #780001 ,#1e0001);
+  @include linearGradient(-45deg, $color-2 ,lighten($color-2,15%));
 
   & img{
     position: fixed;
@@ -61,7 +66,8 @@ a {
     width: 100%;
     animation-name:imageanimation;
     animation-iteration-count: infinite;
-    animation-duration: 220s;
+    animation-duration: 180s;
+    animation-timing-function: cubic-bezier(0, 0, 1, 1);
 }
 
 }
@@ -71,21 +77,16 @@ a {
   position: absolute;
   bottom: -10%;
   z-index:15;
-  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 65%, 0% 100%);
-clip-path: polygon(0 0, 100% 0%, 100% 65%, 0% 100%);
 }
 
 .jumbotron h1{
   
 }
 
-.jumbotron h2{
-	letter-spacing: 10px;
-}
 
-.jumbotron h3{
-  font-size: 1.5em;
-}
+
+
+
 
 
 .skew-box{
@@ -105,10 +106,10 @@ clip-path: polygon(0 0, 100% 0%, 100% 65%, 0% 100%);
 
 @keyframes imageanimation {
     0% {
-        transform: translateY(0px);
+        transform: translateY(-80px);
     }
     100% {
-        transform: translateY(-8000px);
+        transform: translateY(-8500px);
     }
 }
 
@@ -143,7 +144,7 @@ Patterns - reusable parts of our design
 	font-weight: 700;
 	text-transform: uppercase;
 	background-color: $color-2;
-	box-shadow: 0 2px 10px rgba(#000, .08);
+	box-shadow: 0 0px 30px rgba(0, 0, 0, .0);
 	@include font-smoothing;
 	@include transition(all .3s);
 
@@ -151,14 +152,10 @@ Patterns - reusable parts of our design
 	align-items: center;
 	opacity: .75;
 
-	h2{
-		font:{
-			size:1.5rem;
-		}
-	}
+	
 
 	.no-touch &:hover {
-		box-shadow: 0 6px 20px rgba(#000, .1);
+		box-shadow: 0 0px 30px rgba(0, 0, 0, .6);
 	}
 
 
@@ -179,7 +176,7 @@ Patterns - reusable parts of our design
 
     &:nth-of-type(4){
 		/*background-image: url(../img/img-1.jpg);*/
-    	@include linearGradient(33deg, rgba(0, 183, 146,1), rgba(0, 224, 179,1));
+    	@include linearGradient(33deg, #EA8372, #FFB88C);
     }
 
     &:nth-of-type(5){
@@ -215,14 +212,54 @@ h1 {
 		font-size: 5rem;
 	}
 }
-h2{
+
+h3 {
+	font: {
+  	size: 1.8rem;
+  	weight: 700;
+  	family: $secondary-font;
+  	style: normal;
+  } 
+
+  margin-bottom: 1.25rem;
+  color: $color-1;
+}
+
+h4{
   font: {
-  	size: 3rem; 
-  	family: $primary-font;
+  	size: 1.5em;
   	weight: 400;
+  	family: $primary-font;
+  }
+  letter-spacing: 10px;
+  color:$color-3;
+  
+}
+
+h5{
+  font: {
+  	size: 1.4rem; 
+  	family: $primary-font;
+  	weight: 300;
   }
   color: $color-4;
 
+}
+
+h6{
+  font: {
+  	size: 1.2rem; 
+  	family: $primary-font;
+  	weight: 300;
+  }
+  color: $color-4;
+
+}
+
+p {
+	line-height: 3.5rem;
+    word-wrap: break-word;
+    text-align: justify;
 }
 
 /* -------------------------------- 
@@ -802,7 +839,7 @@ Bottom
     	position: relative;
     	right: 0px;
     	bottom: -41px;
-   		z-index: 2;
+   		z-index: 7;
     }
 
 }
@@ -829,13 +866,25 @@ Bottom
 	order: 1;
     @include linearGradient(45deg,$color-2, $color-1);
     color:#fff;
+
+
+    & .bottom-content{
+		width:100%;
+	}
 }
 
 
 .about{
 	order: 2;
-	@include linearGradient(45deg, #f4f4f4, #fff);
-   
+	@include linearGradient(85deg, #f4f4f4, #fff);
+
+	h3{
+		  margin-top: 3.5rem;
+	}
+
+	.bold{
+		font-weight: 700;
+	}
 }
 
 
@@ -910,3 +959,403 @@ Transition Layer
    		@include transform(translateY(-50%) translateX(-2%));
 	}
 }
+
+/* ---------------------------------------------------------------- 
+
+								Form
+
+---------------------------------------------------------------- */
+
+/* -------------------------------- 
+
+Form
+
+-------------------------------- */
+
+.cd-form {
+	
+	width: 100%;
+
+	fieldset {
+
+	}
+
+	legend {
+		padding-bottom: 10px;
+		margin-bottom: 20px;
+		font-size: 2rem;
+		border-bottom: 1px solid $color-3;
+		text-align: center;
+		line-height: 4.5rem;
+		font-weight: 700;
+	}
+
+	div {
+		/* form element wrapper */
+		position: relative;
+		margin: 20px 0;
+	}
+
+	h4, .cd-label {
+		font-size: 1.3rem;
+		color: $color-5;
+		margin-bottom: 10px;
+	}
+
+	.cd-label {
+		display: block;
+	}
+
+	input, textarea, select, label {
+		font-family: $primary-font;
+		font-size: 1.6rem;
+		color: $color-5;
+	}
+
+	input[type="text"], 
+	input[type="email"], 
+	textarea, 
+	select,
+	legend {
+		display: block;
+		width: 100%;
+		@include appearance(none);
+	}
+
+	input[type="text"], 
+	input[type="email"], 
+	textarea, 
+	select {
+		/* general style for input elements */
+		padding: 12px;
+		border: 1px solid darken($color-5, 50%);
+		background-color: $color-4;
+		border-radius: .25em;
+		box-shadow: inset 0 1px 6px rgba(#000, .3);
+		@include transition(all .6s);
+
+		&:focus {
+			outline: none;
+			border-color: $color-5;
+			box-shadow: 0 0 5px rgba($color-2, .2);
+		}
+	}
+
+	.cd-select {
+		/* select element wapper */
+		position: relative;
+
+		&::after {
+			/* arrow icon for select element */
+			content: '';
+			position: absolute;
+			z-index: 1;
+			right: 16px;
+			top: 50%;
+			margin-top: -8px;
+
+			display: block;
+			width: 16px;
+			height: 16px;
+
+			background: url('../img/cd-icon-arrow.svg') no-repeat center center;
+			pointer-events: none;
+		}
+	}
+
+	select {
+		box-shadow: 0 1px 3px rgba(#000, .08);
+		cursor: pointer;
+	}
+
+	select::-ms-expand {
+		display: none;
+	}
+
+	.cd-form-list {
+		margin-top: 16px;
+		@include clearfix;
+	}
+
+	.cd-form-list li {
+		/* wrapper for radio and checkbox input types */
+		display: inline-block;
+		position: relative;
+		@include user-select(none);
+		margin: 0 26px 16px 0;
+		float: left;
+	}
+
+	input[type=radio],
+	input[type=checkbox] {
+		/* hide original check and radio buttons */
+		position: absolute;
+		left: 0;
+		top: 50%;
+		@include transform(translateY(-50%));
+		margin: 0;
+		padding: 0;
+		opacity: 0;
+		z-index: 2;
+	}
+
+	input[type="radio"] + label, 
+	input[type="checkbox"] + label {
+		padding-left: 24px;
+	}
+
+	input[type="radio"] + label::before,
+	input[type="radio"] + label::after,
+	input[type="checkbox"] + label::before,
+	input[type="checkbox"] + label::after {
+		/* custom radio and check boxes */
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		margin-top: -8px;
+		width: 16px;
+		height: 16px;
+	}
+
+	input[type="radio"] + label::before,
+	input[type="checkbox"] + label::before {
+		border: 1px solid darken($color-5, 50%);
+		background: $color-4;
+		box-shadow: inset 0 1px 1px rgba(#000, .08);
+	}
+
+	input[type="radio"] + label::before,
+	input[type="radio"] + label::after {
+		border-radius: 50%;
+	}
+
+	input[type="checkbox"] + label::before,
+	input[type="checkbox"] + label::after {
+		border-radius: .25em;
+	}
+
+	input[type="radio"] + label::after,
+	input[type="checkbox"] + label::after {
+		background-color: $color-2;
+		background-position: center center;
+		background-repeat: no-repeat;
+		box-shadow: 0 0 5px rgba($color-2, .4);
+		display: none;
+	}
+
+	input[type="radio"] + label::after {
+		/* custom image for radio button */
+		background-image: url('../img/cd-icon-radio.svg');
+	}
+
+	input[type="checkbox"] + label::after {
+		/* custom image for checkbox */
+		background-image: url('../img/cd-icon-check.svg');
+	}
+
+	input[type="radio"]:focus + label::before,
+	input[type="checkbox"]:focus + label::before {
+		/* add focus effect for radio and check buttons */
+		box-shadow: 0 0 5px rgba($color-2, .6);
+	}
+
+	input[type="radio"]:checked + label::after,
+	input[type="checkbox"]:checked + label::after {
+		display: block;
+	}
+
+	input[type="radio"]:checked + label::before,
+	input[type="radio"]:checked + label::after,
+	input[type="checkbox"]:checked + label::before,
+	input[type="checkbox"]:checked + label::after {
+		@include animation(cd-bounce .3s);
+	}
+
+	textarea {
+		min-height: 150px;
+		resize: vertical;
+		overflow: auto;
+	}
+
+	input[type="submit"] {
+		/* button style */
+		border: none;
+		background: $color-2;
+		border-radius: .25em;
+		padding: 16px 20px;
+		color: $color-4;
+		font-weight: bold;
+		float: right;
+		cursor: pointer;
+		@include font-smoothing;
+		@include appearance(none);
+
+		.no-touch &:hover {
+			background: lighten($color-2, 5%);
+		}
+
+		&:focus {
+			outline: none;
+			background: $color-1;
+		}
+
+		&:active {
+			@include transform(scale(.9));
+		}
+	}
+
+	[required] {
+		background: url('../img/cd-required.svg') no-repeat top right;
+	}
+
+	.error-message p {
+		background: $color-5;
+		color: $color-4;
+		font-size: 1.4rem;
+		text-align: center;
+		@include font-smoothing;
+		border-radius: .25em;
+		padding: 16px;
+	}
+
+	.error {
+		border-color: $color-5 !important;
+	}
+
+	@include MQ(M) {
+		div {
+			/* form element wrapper */
+			margin: 32px 0;
+		}
+
+			legend + div {
+			/* reduce margin-top for first form element after the legend */
+			margin-top: 20px;
+		}
+
+		h4, .cd-label {
+			font-size: 1.4rem;
+			margin-bottom: 10px;
+		}
+
+		input[type="text"], 
+		input[type="email"], 
+		textarea, 
+		select {
+			padding: 16px;
+		}
+	}
+}
+
+@include keyframes(cd-bounce) {
+	0%, 100% {
+		@include transform(scale(1));
+	}
+
+	50% {
+		@include transform(scale(.8));
+	}
+}
+
+/* -------------------------------- 
+
+Custom icons
+
+-------------------------------- */
+
+.cd-form {
+	.icon input, .icon select, .icon textarea {
+		padding-left: 54px !important;
+	}
+
+	.user {
+		background: url('../img/cd-icon-user.svg') no-repeat 16px center;
+	}
+
+	[required].user {
+		background: url('../img/cd-icon-user.svg') no-repeat 16px center, 
+					url('../img/cd-required.svg') no-repeat top right;
+	}
+
+	.company {
+		background: url('../img/cd-icon-company.svg') no-repeat 16px center;
+	}
+
+	[required].company {
+		background: url('../img/cd-icon-company.svg') no-repeat 16px center, 
+					url('../img/cd-required.svg') no-repeat top right;
+	}
+
+	.email {
+		background: url('../img/cd-icon-email.svg') no-repeat 16px center;
+	}
+
+	[required].email {
+		background: url('../img/cd-icon-email.svg') no-repeat 16px center, 
+					url('../img/cd-required.svg') no-repeat top right;
+	}
+
+	.budget {
+		background: url('../img/cd-icon-budget.svg') no-repeat 16px center;
+	}
+
+	.message {
+		background: url('../img/cd-icon-message.svg') no-repeat 16px 16px;
+	}
+
+	[required].message {
+		background: url('../img/cd-icon-message.svg') no-repeat 16px 16px, 
+					url('../img/cd-required.svg') no-repeat top right;
+	}
+}
+
+/* -------------------------------- 
+
+FLoating labels 
+
+-------------------------------- */
+
+.js .floating-labels {
+	div {
+		margin: 0 0 20px 0;
+	}
+
+	.cd-label {
+		position: absolute;
+		top: 16px;
+		left: 16px;
+		font-size: 1.6rem;
+		cursor: text;
+		@include transition(top .2s, left .2s, font-size .2s);
+	}
+
+	.icon .cd-label {
+		left: 56px;
+	}
+
+	.cd-label.float {
+		/* move label out the input field */
+		font-size: 1.2rem;
+		top: -16px;
+		left: 0 !important;
+	}
+
+	@include MQ(M) {
+
+		legend + div {
+			/* reduce margin-top for first form element after the legend */
+			margin-top: 16px;
+		}
+
+		.cd-label {
+			top: 20px;
+		}
+	}
+}
+
+
+
+
+

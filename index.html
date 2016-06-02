@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,700,300|Josefin+Sans:400,600,700,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,700,300|Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>
 	
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
@@ -22,7 +22,7 @@
 			<div class="skew-content">
 				<div class="jumbotron-text">
 					<h1> Bora ALAP </h1>
-					<h2> Interactive Designer </h2>
+					<h4> Interactive Designer </h4>
 				</div>
 			</div>
 		</div>			
@@ -34,19 +34,19 @@
 
 <main class="cd-main-content">
 	<div class="cd-btn cd-modal-trigger1">
-		<h2>Project 1</h2>
+		<h5>Project 1</h5>
 	</div>
 	<div class="cd-btn cd-modal-trigger2">
-		<h2>Project 2</h2>
+		<h5>Project 2</h5>
 	</div>
 	<div class="cd-btn cd-modal-trigger3">
-		<h2>Project 3</h2>
+		<h5>Project 3</h5>
 	</div>
 	<div class="cd-btn cd-modal-trigger4">
-		<h2>Project 4</h2>
+		<h5>Project 4</h5>
 	</div>
 	<div class="cd-btn cd-modal-trigger5">
-		<h2>Project 5</h2>
+		<h5>Project 5</h5>
 	</div>
 </main> <!-- .cd-main-content -->
 
@@ -147,19 +147,53 @@
 
 			<div class="contact">
 				<div class="bottom-content">
-					<h1> Content H1</h1>
-					<h2> Content H2</h2>
+					<form class="cd-form floating-labels">
+						<fieldset>
+						<legend>Drop Me A Line or Just a Word. </br>I love meeting new people.</legend>
+							<div class="icon">
+								<label class="cd-label" for="cd-name">Name</label>
+								<input class="user" type="text" name="cd-name" id="cd-name" required>
+						    </div> 
+
+						    <div class="icon">
+						    	<label class="cd-label" for="cd-email">Email</label>
+								<input class="email " type="email" name="cd-email" id="cd-email" required>
+						    </div>
+
+						    <div class="error-message">
+								<p>Please enter a valid email address</p>
+							</div>
+
+
+							<div class="icon">
+								<label class="cd-label" for="cd-textarea">Your Message</label>
+				      			<textarea class="message" name="cd-textarea" id="cd-textarea" required></textarea>
+							</div>
+
+							<div>
+						      	<input type="submit" value="Send Message">
+						    </div>
+						</fieldset>
+					</form>
 				</div>
 			</div>
 
 			<div class="about">
 				<div class="bottom-content">
-					<h1> Content H1</h1>
-					<h2> Content H2</h2>
-					<h1> Content H1</h1>
-					<h2> Content H2</h2>
-					<h1> Content H1</h1>
-					<h2> Content H2</h2>
+
+					<p>I’m a Turkish guy in this crazy world. When I say world, I mean this city, industry, crowd, and life style. I grew up on the other side of the coin. Growing up in Turkey and living in Canada thought me so many things. Those teachings helps me at my work. I build digital pieces for brands and learn new things everyday.</p>
+
+					<h3>Experiences</h3>
+
+					<p><span class="bold">Cundari</span></p>
+					<h6><span class="bold">2015 - Now</span> | Currently working as Interactive Designer</h6>
+
+					<p><span class="bold">Cossette</span></p>
+					<h6><span class="bold">2014</span> | Art Directer Intern</h6>
+
+					<p><span class="bold">Lowe Roche</span></p>
+					<h6><span class="bold">2014</span> | Art Directer Intern</h6>
+
 
 				</div>
 			</div>
