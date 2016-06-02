@@ -100,7 +100,7 @@ a {
   bottom: 50%;
   @include backface-visibility(hidden);
   z-index: 10;
-  box-shadow:inset 0px -10px 20px -10px rgba(0, 0, 0, 0.75);
+  overflow:hidden;
 
 }
 
