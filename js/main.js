@@ -43,6 +43,7 @@ jQuery(document).ready(function($){
 		event.preventDefault();
 		transitionLayer.addClass('visible opening');
 		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
+		$('body').css('overflow','hidden');
 		setTimeout(function(){
 			modalWindow1.addClass('visible');
 		}, delay);
@@ -52,6 +53,7 @@ jQuery(document).ready(function($){
 		event.preventDefault();
 		transitionLayer.addClass('visible opening');
 		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
+		$('body').css('overflow','hidden');
 		setTimeout(function(){
 			modalWindow2.addClass('visible');
 		}, delay);
@@ -60,6 +62,7 @@ jQuery(document).ready(function($){
 	modalTrigger3.on('click', function(event){	
 		event.preventDefault();
 		transitionLayer.addClass('visible opening');
+		$('body').css('overflow','hidden');
 		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
 		setTimeout(function(){
 			modalWindow3.addClass('visible');
@@ -70,6 +73,7 @@ jQuery(document).ready(function($){
 		event.preventDefault();
 		transitionLayer.addClass('visible opening');
 		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
+		$('body').css('overflow','hidden');
 		setTimeout(function(){
 			modalWindow4.addClass('visible');
 		}, delay);
@@ -79,6 +83,7 @@ jQuery(document).ready(function($){
 		event.preventDefault();
 		transitionLayer.addClass('visible opening');
 		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
+		$('body').css('overflow','hidden');
 		setTimeout(function(){
 			modalWindow5.addClass('visible');
 		}, delay);
@@ -89,6 +94,7 @@ jQuery(document).ready(function($){
 		event.preventDefault();
 		transitionLayer.addClass('closing');
 		modalWindow1.removeClass('visible');
+		$('body').css('overflow','scroll');
 		transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
 			transitionLayer.removeClass('closing opening visible');
 			transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
@@ -99,6 +105,7 @@ jQuery(document).ready(function($){
 		event.preventDefault();
 		transitionLayer.addClass('closing');
 		modalWindow2.removeClass('visible');
+		$('body').css('overflow','scroll');
 		transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
 			transitionLayer.removeClass('closing opening visible');
 			transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
@@ -109,6 +116,7 @@ jQuery(document).ready(function($){
 		event.preventDefault();
 		transitionLayer.addClass('closing');
 		modalWindow3.removeClass('visible');
+		$('body').css('overflow','scroll');
 		transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
 			transitionLayer.removeClass('closing opening visible');
 			transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
@@ -119,6 +127,7 @@ jQuery(document).ready(function($){
 		event.preventDefault();
 		transitionLayer.addClass('closing');
 		modalWindow4.removeClass('visible');
+		$('body').css('overflow','scroll');
 		transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
 			transitionLayer.removeClass('closing opening visible');
 			transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
@@ -129,6 +138,7 @@ jQuery(document).ready(function($){
 		event.preventDefault();
 		transitionLayer.addClass('closing');
 		modalWindow5.removeClass('visible');
+		$('body').css('overflow','scroll');
 		transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
 			transitionLayer.removeClass('closing opening visible');
 			transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');

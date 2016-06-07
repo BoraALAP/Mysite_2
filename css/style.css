@@ -41,6 +41,12 @@ a {
   text-decoration: none;
 }
 
+canvas {
+  display: block;
+  position: absolute;
+  vertical-align: bottom;
+}
+
 /* -------------------------------- 
 
   Enterence
@@ -85,6 +91,15 @@ a {
   z-index: 15;
 }
 
+#particles-js {
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
 .skew-box {
   -webkit-transform: skewY(-15deg);
   -ms-transform: skewY(-15deg);
@@ -98,8 +113,8 @@ a {
   bottom: 50%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  overflow: hidden;
   z-index: 10;
-  box-shadow: inset 0px -10px 20px -10px rgba(0, 0, 0, 0.75);
 }
 
 @-webkit-keyframes imageanimation {
@@ -160,6 +175,9 @@ Patterns - reusable parts of our design
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   opacity: .75;
 }
 .no-touch .cd-btn:hover {
@@ -241,6 +259,28 @@ Patterns - reusable parts of our design
           flex-grow: 2;
   opacity: 1.0;
   color: #FFFFFF;
+}
+.cd-btn h5 {
+  opacity: 0;
+  transition: all 2s;
+  -webkit-transform: translateX(75px);
+      -ms-transform: translateX(75px);
+          transform: translateX(75px);
+}
+.cd-btn:hover h5 {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+      -ms-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+.cd-btn-logo {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 /* -------------------------------- 
