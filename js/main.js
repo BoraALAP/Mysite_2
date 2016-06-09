@@ -1,28 +1,28 @@
 jQuery(document).ready(function($){
 	//cache some jQuery objects
 	var modalTrigger1 = $('.cd-modal-trigger1'),
-		transitionLayer = $('.cd-transition-layer'),
-		transitionBackground = transitionLayer.children(),
+		transitionLayer1 = $('.cd-transition-layer1'),
+		transitionBackground = transitionLayer1.children(),
 		modalWindow1 = $('.cd-modal1');
 
 	var modalTrigger2 = $('.cd-modal-trigger2'),
-		transitionLayer = $('.cd-transition-layer'),
-		transitionBackground = transitionLayer.children(),
+		transitionLayer2 = $('.cd-transition-layer2'),
+		transitionBackground = transitionLayer2.children(),
 		modalWindow2 = $('.cd-modal2');
 		
 	var modalTrigger3 = $('.cd-modal-trigger3'),
-		transitionLayer = $('.cd-transition-layer'),
-		transitionBackground = transitionLayer.children(),
+		transitionLayer3 = $('.cd-transition-layer3'),
+		transitionBackground3 = transitionLayer3.children(),
 		modalWindow3 = $('.cd-modal3');
 		
 	var modalTrigger4 = $('.cd-modal-trigger4'),
-		transitionLayer = $('.cd-transition-layer'),
-		transitionBackground = transitionLayer.children(),
+		transitionLayer4 = $('.cd-transition-layer4'),
+		transitionBackground4 = transitionLayer4.children(),
 		modalWindow4 = $('.cd-modal4');
 		
 	var modalTrigger5 = $('.cd-modal-trigger5'),
-		transitionLayer = $('.cd-transition-layer'),
-		transitionBackground = transitionLayer.children(),
+		transitionLayer5 = $('.cd-transition-layer5'),
+		transitionBackground5 = transitionLayer5.children(),
 		modalWindow5 = $('.cd-modal5');				
 
 	var frameProportion = 1.78, //png frame aspect ratio
@@ -41,7 +41,7 @@ jQuery(document).ready(function($){
 	//open modal window
 	modalTrigger1.on('click', function(event){	
 		event.preventDefault();
-		transitionLayer.addClass('visible opening');
+		transitionLayer1.addClass('visible opening');
 		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
 		$('body').css('overflow','hidden');
 		setTimeout(function(){
@@ -51,7 +51,7 @@ jQuery(document).ready(function($){
 
 	modalTrigger2.on('click', function(event){	
 		event.preventDefault();
-		transitionLayer.addClass('visible opening');
+		transitionLayer2.addClass('visible opening');
 		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
 		$('body').css('overflow','hidden');
 		setTimeout(function(){
@@ -61,7 +61,7 @@ jQuery(document).ready(function($){
 
 	modalTrigger3.on('click', function(event){	
 		event.preventDefault();
-		transitionLayer.addClass('visible opening');
+		transitionLayer3.addClass('visible opening');
 		$('body').css('overflow','hidden');
 		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
 		setTimeout(function(){
@@ -71,7 +71,7 @@ jQuery(document).ready(function($){
 
 	modalTrigger4.on('click', function(event){	
 		event.preventDefault();
-		transitionLayer.addClass('visible opening');
+		transitionLayer4.addClass('visible opening');
 		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
 		$('body').css('overflow','hidden');
 		setTimeout(function(){
@@ -81,7 +81,7 @@ jQuery(document).ready(function($){
 
 	modalTrigger5.on('click', function(event){	
 		event.preventDefault();
-		transitionLayer.addClass('visible opening');
+		transitionLayer5.addClass('visible opening');
 		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
 		$('body').css('overflow','hidden');
 		setTimeout(function(){
@@ -92,56 +92,56 @@ jQuery(document).ready(function($){
 	//close modal window
 	modalWindow1.on('click', '.modal-close', function(event){
 		event.preventDefault();
-		transitionLayer.addClass('closing');
+		transitionLayer1.addClass('closing');
 		modalWindow1.removeClass('visible');
 		$('body').css('overflow','scroll');
-		transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
-			transitionLayer.removeClass('closing opening visible');
-			transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
+		transitionBackground1.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
+			transitionLayer1.removeClass('closing opening visible');
+			transitionBackground1.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
 		});
 	});
 
 		modalWindow2.on('click', '.modal-close', function(event){
 		event.preventDefault();
-		transitionLayer.addClass('closing');
+		transitionLayer2.addClass('closing');
 		modalWindow2.removeClass('visible');
 		$('body').css('overflow','scroll');
-		transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
-			transitionLayer.removeClass('closing opening visible');
-			transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
+		transitionBackground2.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
+			transitionLayer2.removeClass('closing opening visible');
+			transitionBackground2.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
 		});
 	});
 
 			modalWindow3.on('click', '.modal-close', function(event){
 		event.preventDefault();
-		transitionLayer.addClass('closing');
+		transitionLayer3.addClass('closing');
 		modalWindow3.removeClass('visible');
 		$('body').css('overflow','scroll');
-		transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
-			transitionLayer.removeClass('closing opening visible');
-			transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
+		transitionBackground3.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
+			transitionLayer3.removeClass('closing opening visible');
+			transitionBackground3.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
 		});
 	});
 
 				modalWindow4.on('click', '.modal-close', function(event){
 		event.preventDefault();
-		transitionLayer.addClass('closing');
+		transitionLayer4.addClass('closing');
 		modalWindow4.removeClass('visible');
 		$('body').css('overflow','scroll');
-		transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
-			transitionLayer.removeClass('closing opening visible');
-			transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
+		transitionBackground4.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
+			transitionLayer4.removeClass('closing opening visible');
+			transitionBackground4.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
 		});
 	});
 
 					modalWindow5.on('click', '.modal-close', function(event){
 		event.preventDefault();
-		transitionLayer.addClass('closing');
+		transitionLayer5.addClass('closing');
 		modalWindow5.removeClass('visible');
 		$('body').css('overflow','scroll');
-		transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
-			transitionLayer.removeClass('closing opening visible');
-			transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
+		transitionBackground5.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
+			transitionLayer5.removeClass('closing opening visible');
+			transitionBackground5.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
 		});
 	});
 

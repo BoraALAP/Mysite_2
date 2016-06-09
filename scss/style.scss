@@ -105,7 +105,7 @@ canvas{
 .skew-box{
   @include transform(skewY(-15deg));
   background-size: cover;
-  background-color: $color-5;
+  background-color: $white;
   height:100%;
   width: 100%;
   position: fixed;
@@ -127,7 +127,7 @@ canvas{
 
 .skew-content{
   @include transform(skewY(15deg));
-  color: $color-5;
+  color: $white;
   height: 100%; 
 }
 
@@ -142,7 +142,7 @@ Patterns - reusable parts of our design
 	padding: 1.6em 2.4em;
 	font-size: 1.4rem;
 	letter-spacing: .15em;	
-	color: $color-3;
+	
 	font-weight: 700;
 	text-transform: uppercase;
 	background-color: $color-2;
@@ -153,7 +153,7 @@ Patterns - reusable parts of our design
 	display: flex;
 	align-items: center;
 	flex-direction: row;
-	opacity: .75;
+	opacity: .9;
 
 	
 
@@ -164,7 +164,7 @@ Patterns - reusable parts of our design
 
 	&:nth-of-type(1){
     	/*background-image: url(../img/img-1.jpg);*/
-    	@include linearGradient(33deg, rgba(37,131,229,1), rgba(0,82,158,1)); 
+    	@include linearGradient(33deg, darken(#CB0076, 10%), #CB0076); 
 	    	
 	    	&:before{
 	    	background-image: url(../img/logo/tsa_logo.svg);
@@ -172,6 +172,7 @@ Patterns - reusable parts of our design
 	    	width:200px;
 	    	height: 75px;
     		background-size: contain;
+    		color: $white;
 		    position: relative;
 		    background-repeat: no-repeat;
 		    background-position: 50% 50%;
@@ -180,13 +181,14 @@ Patterns - reusable parts of our design
 
     &:nth-of-type(2){
 		/*background-image: url(../img/img-2.jpg);*/
-    	@include linearGradient(33deg, rgba(2,234,229,1), rgba(0,158,158,1));
+    	@include linearGradient(33deg, #3B6E98, darken(#3B6E98, 20%));
 
     		&:before{
 	    	background-image: url(../img/logo/meridian_logo_rev.svg);
 	    	content: " ";
 	    	width:200px;
 	    	height: 30px;
+	    	color: $white;
     		background-size: contain;
 		    position: relative;
 		    background-repeat: no-repeat;
@@ -196,13 +198,14 @@ Patterns - reusable parts of our design
 
     &:nth-of-type(3){
     	/*background-image: url(../img/img-3.jpg);*/
-    	@include linearGradient(33deg, rgba(124, 2, 2, 1), rgba(168, 0, 0,1));
+    	@include linearGradient(33deg, darken(#F15060, 20%), #F15060);
 
     		&:before{
-	    	background-image: url(../img/logo/cundari_black.svg);
+	    	background-image: url(../img/logo/cundari_rev.svg);
 	    	content: " ";
 	    	width:200px;
-	    	height: 75px;
+	    	height: 40px;
+	    	color: $white;
     		background-size: contain;
 		    position: relative;
 		    background-repeat: no-repeat;
@@ -212,29 +215,34 @@ Patterns - reusable parts of our design
 
     &:nth-of-type(4){
 		/*background-image: url(../img/img-1.jpg);*/
-    	@include linearGradient(33deg, #EA8372, #FFB88C);
+    	@include linearGradient(33deg, #FFffee, #FFffdd);
 
     		&:before{
 	    	background-image: url(../img/logo/jamieson_logo.svg);
 	    	content: " ";
 	    	width:200px;
 	    	height: 50px;
+	    	color: $color-3;
     		background-size: contain;
 		    position: relative;
 		    background-repeat: no-repeat;
 		    background-position: 50% 50%;
 	    }
+	    h5{
+	    	color: $color-3;
+	    }
     }
 
     &:nth-of-type(5){
 		/*background-image: url(../img/img-2.jpg);*/
-    	@include linearGradient(33deg, rgba(145, 0, 224,1), rgba(119, 0, 182,1));
+    	@include linearGradient(33deg, #3B6E98, darken(#3B6E98, 20%));
 
     		&:before{
-	    	background-image: url(../img/logo/meridian_logo.svg);
+	    	background-image: url(../img/logo/meridian_logo_rev.svg);
 	    	content: " ";
 	    	width:200px;
 	    	height: 30px;
+	    	color: $white;
     		background-size: contain;
 		    position: relative;
 		    background-repeat: no-repeat;
@@ -245,13 +253,14 @@ Patterns - reusable parts of our design
     &:hover{
     	flex-grow: 2;	
     	opacity: 1.0;
-    	color: $color-5;
+    	color: $white;
     }
 
     h5{
     	opacity: 0;
     	@include transition(all 2s);
     	transform: translateX(75px);
+    	color: $white;
     }
 
     &:hover h5{
@@ -352,7 +361,7 @@ Main Content
 	/* vertically align its content */
 	display: flex;
     flex-direction: column;
-	background-color: $color-5;
+	background-color: $white;
 	overflow: hidden;
 	height:100%;
 	justify-content: center;
@@ -376,7 +385,7 @@ Modal window
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
-	background: $color-4 url(../img/modal-bg.jpg) no-repeat center center;
+	background: $color-4 url(../img/modal-bg1.jpg) no-repeat center center;
 	background-size: cover;
 	opacity: 0;
 	visibility: hidden;
@@ -386,7 +395,7 @@ Modal window
 		height: 100%;
 		overflow-y: auto;
 		padding: 3em 5%;
-		color: $color-5;
+		color: $white;
 		@include font-smoothing;
 	}
 
@@ -478,7 +487,7 @@ Modal window
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
-	background: $color-4 url(../img/modal-bg.jpg) no-repeat center center;
+	background: $color-4 url(../img/modal-bg2.jpg) no-repeat center center;
 	background-size: cover;
 	opacity: 0;
 	visibility: hidden;
@@ -488,7 +497,7 @@ Modal window
 		height: 100%;
 		overflow-y: auto;
 		padding: 3em 5%;
-		color: $color-5;
+		color: $white;
 		@include font-smoothing;
 	}
 
@@ -580,7 +589,7 @@ Modal window
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
-	background: $color-4 url(../img/modal-bg.jpg) no-repeat center center;
+	background: $color-4 url(../img/modal-bg3.jpg) no-repeat center center;
 	background-size: cover;
 	opacity: 0;
 	visibility: hidden;
@@ -590,7 +599,7 @@ Modal window
 		height: 100%;
 		overflow-y: auto;
 		padding: 3em 5%;
-		color: $color-5;
+		color: $white;
 		@include font-smoothing;
 	}
 
@@ -682,7 +691,7 @@ Modal window
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
-	background: $color-4 url(../img/modal-bg.jpg) no-repeat center center;
+	background: $color-4 url(../img/modal-bg4.jpg) no-repeat center center;
 	background-size: cover;
 	opacity: 0;
 	visibility: hidden;
@@ -692,7 +701,7 @@ Modal window
 		height: 100%;
 		overflow-y: auto;
 		padding: 3em 5%;
-		color: $color-5;
+		color: $white;
 		@include font-smoothing;
 	}
 
@@ -784,7 +793,7 @@ Modal window
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
-	background: $color-4 url(../img/modal-bg.jpg) no-repeat center center;
+	background: $color-4 url(../img/modal-bg2.jpg) no-repeat center center;
 	background-size: cover;
 	opacity: 0;
 	visibility: hidden;
@@ -794,7 +803,7 @@ Modal window
 		height: 100%;
 		overflow-y: auto;
 		padding: 3em 5%;
-		color: $color-5;
+		color: $white;
 		@include font-smoothing;
 	}
 
@@ -889,7 +898,7 @@ Bottom
 	min-height: 100%;
 	display: flex;
 	flex-flow: column nowrap;
-	background: $color-5;
+	background: $white;
 	position: relative;
 	z-index: 12;
 }
@@ -911,7 +920,7 @@ Bottom
 		}
     	text-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4);
     	opacity: 0.25;
-    	color:$color-5;
+    	color:$white;
     	position: relative;
     	right: 0px;
     	bottom: -41px;
@@ -972,7 +981,7 @@ Transition Layer
 
 -------------------------------- */
 
-.cd-transition-layer {
+.cd-transition-layer1 {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -992,7 +1001,183 @@ Transition Layer
 		height: 100%;
 		/* our sprite is composed of 25 frames */ 
 		width: 2500%;
-		background: url(../img/ink.png) no-repeat 0 0;
+		background: url(../img/ink1.png) no-repeat 0 0;
+		background-size: 100% 100%;
+	}
+
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.opening .bg-layer {
+		@include animation(cd-sequence .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	&.closing .bg-layer {
+		@include animation(cd-sequence-reverse .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	.no-cssanimations & {
+		display: none;
+	}
+}
+
+.cd-transition-layer2 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 25;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+
+	.bg-layer {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include transform(translateY(-50%) translateX(-2%));
+		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport */
+		height: 100%;
+		/* our sprite is composed of 25 frames */ 
+		width: 2500%;
+		background: url(../img/ink2.png) no-repeat 0 0;
+		background-size: 100% 100%;
+	}
+
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.opening .bg-layer {
+		@include animation(cd-sequence .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	&.closing .bg-layer {
+		@include animation(cd-sequence-reverse .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	.no-cssanimations & {
+		display: none;
+	}
+}
+
+.cd-transition-layer3 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 25;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+
+	.bg-layer {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include transform(translateY(-50%) translateX(-2%));
+		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport */
+		height: 100%;
+		/* our sprite is composed of 25 frames */ 
+		width: 2500%;
+		background: url(../img/ink3.png) no-repeat 0 0;
+		background-size: 100% 100%;
+	}
+
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.opening .bg-layer {
+		@include animation(cd-sequence .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	&.closing .bg-layer {
+		@include animation(cd-sequence-reverse .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	.no-cssanimations & {
+		display: none;
+	}
+}
+
+.cd-transition-layer4 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 25;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+
+	.bg-layer {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include transform(translateY(-50%) translateX(-2%));
+		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport */
+		height: 100%;
+		/* our sprite is composed of 25 frames */ 
+		width: 2500%;
+		background: url(../img/ink4.png) no-repeat 0 0;
+		background-size: 100% 100%;
+	}
+
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.opening .bg-layer {
+		@include animation(cd-sequence .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	&.closing .bg-layer {
+		@include animation(cd-sequence-reverse .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	.no-cssanimations & {
+		display: none;
+	}
+}
+
+.cd-transition-layer5 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 25;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+
+	.bg-layer {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include transform(translateY(-50%) translateX(-2%));
+		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport */
+		height: 100%;
+		/* our sprite is composed of 25 frames */ 
+		width: 2500%;
+		background: url(../img/ink2.png) no-repeat 0 0;
 		background-size: 100% 100%;
 	}
 
@@ -1074,7 +1259,7 @@ Form
 
 	h4, .cd-label {
 		font-size: 1.3rem;
-		color: $color-5;
+		color: $white;
 		margin-bottom: 10px;
 	}
 
@@ -1085,7 +1270,7 @@ Form
 	input, textarea, select, label {
 		font-family: $primary-font;
 		font-size: 1.6rem;
-		color: $color-5;
+		color: $white;
 	}
 
 	input[type="text"], 
@@ -1104,7 +1289,7 @@ Form
 	select {
 		/* general style for input elements */
 		padding: 12px;
-		border: 1px solid darken($color-5, 50%);
+		border: 1px solid darken($white, 50%);
 		background-color: $color-4;
 		border-radius: .25em;
 		box-shadow: inset 0 1px 6px rgba(#000, .3);
@@ -1112,7 +1297,7 @@ Form
 
 		&:focus {
 			outline: none;
-			border-color: $color-5;
+			border-color: $white;
 			box-shadow: 0 0 5px rgba($color-2, .2);
 		}
 	}
@@ -1197,7 +1382,7 @@ Form
 
 	input[type="radio"] + label::before,
 	input[type="checkbox"] + label::before {
-		border: 1px solid darken($color-5, 50%);
+		border: 1px solid darken($white, 50%);
 		background: $color-4;
 		box-shadow: inset 0 1px 1px rgba(#000, .08);
 	}
@@ -1287,7 +1472,7 @@ Form
 	}
 
 	.error-message p {
-		background: $color-5;
+		background: $white;
 		color: $color-4;
 		font-size: 1.4rem;
 		text-align: center;
@@ -1297,7 +1482,7 @@ Form
 	}
 
 	.error {
-		border-color: $color-5 !important;
+		border-color: $white !important;
 	}
 
 	@include MQ(M) {
