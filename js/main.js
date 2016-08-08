@@ -193,11 +193,15 @@ jQuery(document).ready(function($){
 
 //smooth scrooling
 
-$(function() {
-				$.scrollify({
-				     section : ".section",
-				});
-			});
+// $(function() {
+// 				$.scrollify({
+// 				     section : ".section",
+// 				     // after:function() {
+
+// 				     // jQuery('#particles-js').css('visibility','hidden');},
+
+// 				});
+// 			});
 
 
 
