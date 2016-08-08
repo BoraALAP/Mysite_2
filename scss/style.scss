@@ -396,11 +396,14 @@ Flex Box
 }
 
 .smallitem{
-	flex: 1 0 0;
+	flex: 1;
 }
 
 .bigitem{
-	flex: 2 0 0;
+	flex: 2;
+	padding: 30px;
+    width: 50%;
+    height: 100%;
 }
 
 
