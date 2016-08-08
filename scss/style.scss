@@ -18,7 +18,7 @@ Primary style
 	box-sizing: border-box; 
 }
 
-html {
+html { 
 	font-size: 62.5%;
 
 	@include scrollbars(1rem, $color-1); 
@@ -59,6 +59,7 @@ canvas{
 
 .jumbotron{
   height:100%;
+  margin-bottom: 0;
 
   @include linearGradient(-45deg, $color-2 ,lighten($color-2,15%));
 
@@ -74,6 +75,7 @@ canvas{
     animation-iteration-count: infinite;
     animation-duration: 180s;
     animation-timing-function: cubic-bezier(0, 0, 1, 1);
+
 }
 
 }
@@ -87,6 +89,7 @@ canvas{
 }
 
 .jumbotron h1{
+	color: $color-1;
 	opacity: 0;
 	animation-name:titleopacity;
   	animation-duration: 2s;
@@ -373,6 +376,34 @@ p {
     text-align: justify;
 }
 
+
+
+/* -------------------------------- 
+
+Flex Box
+
+-------------------------------- */
+
+
+.flexcontainer{
+	display: flex;
+	flex-flow: row wrap;
+    min-height:auto;
+    align-items: stretch;
+    order: 2;
+    z-index: 5;
+    flex: 1;
+}
+
+.smallitem{
+	flex: 1 0 0;
+}
+
+.bigitem{
+	flex: 2 0 0;
+}
+
+
 /* -------------------------------- 
 
 Main Content
@@ -402,8 +433,7 @@ Main Content
 Modal window 
 
 -------------------------------- */
-
-.cd-modal1 {
+.cd-modal-general{
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -411,39 +441,10 @@ Modal window
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
-	background: $color-4 url(../img/modal-bg1.jpg) no-repeat center center;
 	background-size: cover;
 	opacity: 0;
 	visibility: hidden;
 	@include transition(opacity .3s 0s, visibility 0s .3s);
-
-	.modal-content {
-		height: 100%;
-		overflow-y: auto;
-		padding: 3em 5%;
-		color: $white;
-		@include font-smoothing;
-	}
-
-	h1 {
-		text-align: center;
-
-		&::after {
-			/* ink/brush separation */
-			content: '';
-			display: block;
-			width: 130px;
-			height: 18px;
-			background: url(../img/ink-separation.svg) no-repeat center center;
-			margin: .2em auto 0;
-		}
-	}
-
-	p {
-		line-height: 1.6;
-		margin: 2em auto;
-		max-width: 800px;
-	}
 
 	.modal-close {
 		/* 'X' icon */
@@ -487,6 +488,8 @@ Modal window
 			@include transition(transform .3s 0s, visibility 0s 0s, opacity .3s 0s);
 			@include transform(scale(1));
 		}
+
+		
 	}
 
 	@include MQ(L) {
@@ -495,423 +498,107 @@ Modal window
 		}
 
 		.modal-close { 
-			height: 60px;
-			width: 60px;
+			height: 45px;
+			width: 45px;
 		}
 
 		p {
 			font-size: 2rem;
 		}
 	}
+
+
+}
+.cd-modal1 {
+	@include linearGradient(33deg, darken(#CB0076, 20%), lighten(#CB0076, 10%)); 
+
 }
 
 .cd-modal2 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 30;
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	background: $color-4 url(../img/modal-bg2.jpg) no-repeat center center;
-	background-size: cover;
-	opacity: 0;
-	visibility: hidden;
-	@include transition(opacity .3s 0s, visibility 0s .3s);
-
-	.modal-content {
-		height: 100%;
-		overflow-y: auto;
-		padding: 3em 5%;
-		color: $white;
-		@include font-smoothing;
-	}
-
-	h1 {
-		text-align: center;
-
-		&::after {
-			/* ink/brush separation */
-			content: '';
-			display: block;
-			width: 130px;
-			height: 18px;
-			background: url(../img/ink-separation.svg) no-repeat center center;
-			margin: .2em auto 0;
-		}
-	}
-
-	p {
-		line-height: 1.6;
-		margin: 2em auto;
-		max-width: 800px;
-	}
-
-	.modal-close {
-		/* 'X' icon */
-		position: absolute;
-		z-index: 1;
-		top: 20px;
-		right: 5%;
-		height: 45px;
-		width: 45px;
-		border-radius: 50%;
-		background: rgba(#000, .3) url(../img/cd-icon-close.svg) no-repeat center center;
-		
-		/* image replacement */
-		overflow: hidden;
-		text-indent: 100%;
-		white-space: nowrap;
-		
-		visibility: hidden;
-		opacity: 0;
-		@include transform(scale(0));
-		@include transition(transform .3s 0s, visibility 0s .3s, opacity .3s 0s);
-
-		.no-touch &:hover {
-			background-color: rgba(#000, .5);
-		}
-	}
-
-	&.visible {
-		opacity: 1;
-		visibility: visible;
-		@include transition(opacity .7s, visibility 0s);
-
-		.modal-content {
-			/* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
-			-webkit-overflow-scrolling: touch;
-		}
-
-		.modal-close {
-			visibility: visible;
-			opacity: 1;
-			@include transition(transform .3s 0s, visibility 0s 0s, opacity .3s 0s);
-			@include transform(scale(1));
-		}
-	}
-
-	@include MQ(L) {
-		.modal-content {
-			padding: 6em 5%;
-		}
-
-		.modal-close { 
-			height: 60px;
-			width: 60px;
-		}
-
-		p {
-			font-size: 2rem;
-		}
-	}
+	@include linearGradient(33deg, lighten(#3B6E98,10%), darken(#3B6E98, 30%));
 }
 
+
 .cd-modal3 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 30;
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	background: $color-4 url(../img/modal-bg3.jpg) no-repeat center center;
-	background-size: cover;
-	opacity: 0;
-	visibility: hidden;
-	@include transition(opacity .3s 0s, visibility 0s .3s);
-
-	.modal-content {
-		height: 100%;
-		overflow-y: auto;
-		padding: 3em 5%;
-		color: $white;
-		@include font-smoothing;
-	}
-
-	h1 {
-		text-align: center;
-
-		&::after {
-			/* ink/brush separation */
-			content: '';
-			display: block;
-			width: 130px;
-			height: 18px;
-			background: url(../img/ink-separation.svg) no-repeat center center;
-			margin: .2em auto 0;
-		}
-	}
-
-	p {
-		line-height: 1.6;
-		margin: 2em auto;
-		max-width: 800px;
-	}
-
-	.modal-close {
-		/* 'X' icon */
-		position: absolute;
-		z-index: 1;
-		top: 20px;
-		right: 5%;
-		height: 45px;
-		width: 45px;
-		border-radius: 50%;
-		background: rgba(#000, .3) url(../img/cd-icon-close.svg) no-repeat center center;
-		
-		/* image replacement */
-		overflow: hidden;
-		text-indent: 100%;
-		white-space: nowrap;
-		
-		visibility: hidden;
-		opacity: 0;
-		@include transform(scale(0));
-		@include transition(transform .3s 0s, visibility 0s .3s, opacity .3s 0s);
-
-		.no-touch &:hover {
-			background-color: rgba(#000, .5);
-		}
-	}
-
-	&.visible {
-		opacity: 1;
-		visibility: visible;
-		@include transition(opacity .7s, visibility 0s);
-
-		.modal-content {
-			/* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
-			-webkit-overflow-scrolling: touch;
-		}
-
-		.modal-close {
-			visibility: visible;
-			opacity: 1;
-			@include transition(transform .3s 0s, visibility 0s 0s, opacity .3s 0s);
-			@include transform(scale(1));
-		}
-	}
-
-	@include MQ(L) {
-		.modal-content {
-			padding: 6em 5%;
-		}
-
-		.modal-close { 
-			height: 60px;
-			width: 60px;
-		}
-
-		p {
-			font-size: 2rem;
-		}
-	}
+	@include linearGradient(33deg, darken(#F15060, 30%), #F15060);
 }
 
 .cd-modal4 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 30;
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	background: $color-4 url(../img/modal-bg4.jpg) no-repeat center center;
-	background-size: cover;
-	opacity: 0;
-	visibility: hidden;
-	@include transition(opacity .3s 0s, visibility 0s .3s);
+	@include linearGradient(33deg, lighten(#FFffee, 10%), #FFffdd);
 
-	.modal-content {
-		height: 100%;
-		overflow-y: auto;
-		padding: 3em 5%;
-		color: $white;
-		@include font-smoothing;
+	h1{
+		color: $color-2 !important;
 	}
-
-	h1 {
-		text-align: center;
-
-		&::after {
-			/* ink/brush separation */
-			content: '';
-			display: block;
-			width: 130px;
-			height: 18px;
-			background: url(../img/ink-separation.svg) no-repeat center center;
-			margin: .2em auto 0;
-		}
-	}
-
-	p {
-		line-height: 1.6;
-		margin: 2em auto;
-		max-width: 800px;
-	}
-
-	.modal-close {
-		/* 'X' icon */
-		position: absolute;
-		z-index: 1;
-		top: 20px;
-		right: 5%;
-		height: 45px;
-		width: 45px;
-		border-radius: 50%;
-		background: rgba(#000, .3) url(../img/cd-icon-close.svg) no-repeat center center;
-		
-		/* image replacement */
-		overflow: hidden;
-		text-indent: 100%;
-		white-space: nowrap;
-		
-		visibility: hidden;
-		opacity: 0;
-		@include transform(scale(0));
-		@include transition(transform .3s 0s, visibility 0s .3s, opacity .3s 0s);
-
-		.no-touch &:hover {
-			background-color: rgba(#000, .5);
-		}
-	}
-
-	&.visible {
-		opacity: 1;
-		visibility: visible;
-		@include transition(opacity .7s, visibility 0s);
-
-		.modal-content {
-			/* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
-			-webkit-overflow-scrolling: touch;
-		}
-
-		.modal-close {
-			visibility: visible;
-			opacity: 1;
-			@include transition(transform .3s 0s, visibility 0s 0s, opacity .3s 0s);
-			@include transform(scale(1));
-		}
-	}
-
-	@include MQ(L) {
-		.modal-content {
-			padding: 6em 5%;
-		}
-
-		.modal-close { 
-			height: 60px;
-			width: 60px;
-		}
-
-		p {
-			font-size: 2rem;
-		}
+	p{
+		color: $color-2 !important;
 	}
 }
 
 .cd-modal5 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 30;
+	@include linearGradient(33deg, lighten(#3B6E98,10%), darken(#3B6E98, 30%));
+}
+
+.modal-content{
 	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	background: $color-4 url(../img/modal-bg2.jpg) no-repeat center center;
-	background-size: cover;
-	opacity: 0;
-	visibility: hidden;
-	@include transition(opacity .3s 0s, visibility 0s .3s);
+	overflow-y: auto;
+	padding: 3em 5%;
+	color: $white;
+	background: none;
+	@include font-smoothing;
 
-	.modal-content {
-		height: 100%;
-		overflow-y: auto;
-		padding: 3em 5%;
-		color: $white;
-		@include font-smoothing;
-	}
-
-	h1 {
-		text-align: center;
-
-		&::after {
-			/* ink/brush separation */
-			content: '';
-			display: block;
-			width: 130px;
-			height: 18px;
-			background: url(../img/ink-separation.svg) no-repeat center center;
-			margin: .2em auto 0;
-		}
-	}
-
-	p {
-		line-height: 1.6;
-		margin: 2em auto;
-		max-width: 800px;
-	}
-
-	.modal-close {
-		/* 'X' icon */
-		position: absolute;
-		z-index: 1;
-		top: 20px;
-		right: 5%;
-		height: 45px;
-		width: 45px;
-		border-radius: 50%;
-		background: rgba(#000, .3) url(../img/cd-icon-close.svg) no-repeat center center;
+		h1{
+			text-align: center;
+			color: $white;
+			opacity: 0;
+				
+				font: {
+  					size: 3rem;
+				  	weight: 400;
+				  	family: $primary-font;
+				  	style: normal;
+				  }
 		
-		/* image replacement */
-		overflow: hidden;
-		text-indent: 100%;
-		white-space: nowrap;
-		
-		visibility: hidden;
-		opacity: 0;
-		@include transform(scale(0));
-		@include transition(transform .3s 0s, visibility 0s .3s, opacity .3s 0s);
 
-		.no-touch &:hover {
-			background-color: rgba(#000, .5);
-		}
-	}
-
-	&.visible {
-		opacity: 1;
-		visibility: visible;
-		@include transition(opacity .7s, visibility 0s);
-
-		.modal-content {
-			/* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
-			-webkit-overflow-scrolling: touch;
-		}
-
-		.modal-close {
-			visibility: visible;
-			opacity: 1;
-			@include transition(transform .3s 0s, visibility 0s 0s, opacity .3s 0s);
-			@include transform(scale(1));
-		}
-	}
-
-	@include MQ(L) {
-		.modal-content {
-			padding: 6em 5%;
-		}
-
-		.modal-close { 
-			height: 60px;
-			width: 60px;
+			&::after {
+				/* ink/brush separation */
+				content: '';
+				display: block;
+				width: 130px;
+				height: 18px;
+				background: url(../img/ink-separation.svg) no-repeat center center;
+				margin: .2em auto 0;
+			}
 		}
 
 		p {
-			font-size: 2rem;
-		}
+			opacity: 0;
+			line-height: 1.6;
+			margin: 2em auto;
+			max-width: 800px;
+			color: $white;
 	}
 }
+
+.visible {
+	.modal-content{ 
+
+		h1{
+			animation-name:titleopacity;
+		  	animation-duration: 1s;
+		  	animation-delay: 0.5s;
+		  	animation-timing-function: cubic-bezier(0, 0, 1, 1);
+		  	animation-fill-mode: forwards;
+	  	};
+
+	  	p{
+			animation-name:titleopacity;
+		  	animation-duration: 1s;
+		  	animation-delay: 0.75s;
+		  	animation-timing-function: cubic-bezier(0, 0, 1, 1);
+		  	animation-fill-mode: forwards;
+	  	};
+	  }
+};
 
 /* -------------------------------- 
 
@@ -1276,6 +963,7 @@ Form
 		text-align: center;
 		line-height: 4.5rem;
 		font-weight: 700;
+		color: $white;
 	}
 
 	div {
