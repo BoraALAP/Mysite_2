@@ -445,38 +445,31 @@ Flex Box
 
 -------------------------------- */
 .flexcontainer {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  min-height: auto;
-  -webkit-align-items: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -webkit-order: 2;
-      -ms-flex-order: 2;
-          order: 2;
-  z-index: 5;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-flow: row;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .smallitem {
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-flex: 1 auto;
+      -ms-flex: 1 auto;
+          flex: 1 auto;
+  margin: 2.5%;
+  width: 30%;
 }
 
 .bigitem {
-  -webkit-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
-  padding: 30px;
-  width: 50%;
-  height: 100%;
+  -webkit-flex: 2 1;
+      -ms-flex: 2 1;
+          flex: 2 1;
+  margin: 2.5%;
+  width: 60%;
 }
 
 /* -------------------------------- 
@@ -549,6 +542,9 @@ Modal window
 }
 .no-touch .cd-modal-general .modal-close:hover {
   background-color: rgba(0, 0, 0, 0.5);
+}
+.cd-modal-general img {
+  width: 100%;
 }
 .cd-modal-general.visible {
   opacity: 1;
@@ -623,6 +619,12 @@ Modal window
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
   /* IE6-9 */
 }
+.cd-modal3 h2 {
+  margin: auto;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
 
 .cd-modal4 {
   background: white;
@@ -688,9 +690,11 @@ Modal window
 .modal-content p {
   opacity: 0;
   line-height: 1.6;
-  margin: 2em auto;
   max-width: 800px;
   color: #FFFFFF;
+}
+.modal-content img {
+  opacity: 0;
 }
 
 .visible .modal-content h1 {
@@ -712,6 +716,18 @@ Modal window
           animation-duration: 1s;
   -webkit-animation-delay: 0.75s;
           animation-delay: 0.75s;
+  -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+          animation-timing-function: cubic-bezier(0, 0, 1, 1);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.visible .modal-content img {
+  -webkit-animation-name: titleopacity;
+          animation-name: titleopacity;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1.25s;
+          animation-delay: 1.25s;
   -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
           animation-timing-function: cubic-bezier(0, 0, 1, 1);
   -webkit-animation-fill-mode: forwards;
@@ -850,7 +866,7 @@ Bottom
 Transition Layer 
 
 -------------------------------- */
-.cd-transition-layer1 {
+.cd-transition-general {
   position: fixed;
   top: 0;
   left: 0;
@@ -861,7 +877,7 @@ Transition Layer
   visibility: hidden;
   overflow: hidden;
 }
-.cd-transition-layer1 .bg-layer {
+.cd-transition-general .bg-layer {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -875,206 +891,245 @@ Transition Layer
   background: url(../img/ink1.png) no-repeat 0 0;
   background-size: 100% 100%;
 }
-.cd-transition-layer1.visible {
+.cd-transition-general.visible {
   opacity: 1;
   visibility: visible;
 }
-.cd-transition-layer1.opening .bg-layer {
+.cd-transition-general.opening .bg-layer {
   -webkit-animation: cd-sequence 0.8s steps(24);
   animation: cd-sequence 0.8s steps(24);
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-.cd-transition-layer1.closing .bg-layer {
+.cd-transition-general.closing .bg-layer {
   -webkit-animation: cd-sequence-reverse 0.8s steps(24);
   animation: cd-sequence-reverse 0.8s steps(24);
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-.no-cssanimations .cd-transition-layer1 {
+.no-cssanimations .cd-transition-general {
   display: none;
+}
+
+/*.cd-transition-layer1 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 25;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+
+	.bg-layer {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include transform(translateY(-50%) translateX(-2%));
+		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport 
+		height: 100%;
+		/* our sprite is composed of 25 frames 
+		width: 2500%;
+		background: url(../img/ink1.png) no-repeat 0 0;
+		background-size: 100% 100%;
+	}
+
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.opening .bg-layer {
+		@include animation(cd-sequence .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	&.closing .bg-layer {
+		@include animation(cd-sequence-reverse .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	.no-cssanimations & {
+		display: none;
+	}
 }
 
 .cd-transition-layer2 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 25;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  visibility: hidden;
-  overflow: hidden;
-}
-.cd-transition-layer2 .bg-layer {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translateY(-50%) translateX(-2%);
-  -ms-transform: translateY(-50%) translateX(-2%);
-  transform: translateY(-50%) translateX(-2%);
-  /* its dimentions will be overwritten using jQuery to proportionally fit the viewport */
-  height: 100%;
-  /* our sprite is composed of 25 frames */
-  width: 2500%;
-  background: url(../img/ink2.png) no-repeat 0 0;
-  background-size: 100% 100%;
-}
-.cd-transition-layer2.visible {
-  opacity: 1;
-  visibility: visible;
-}
-.cd-transition-layer2.opening .bg-layer {
-  -webkit-animation: cd-sequence 0.8s steps(24);
-  animation: cd-sequence 0.8s steps(24);
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.cd-transition-layer2.closing .bg-layer {
-  -webkit-animation: cd-sequence-reverse 0.8s steps(24);
-  animation: cd-sequence-reverse 0.8s steps(24);
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.no-cssanimations .cd-transition-layer2 {
-  display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 25;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+
+	.bg-layer {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include transform(translateY(-50%) translateX(-2%));
+		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport 
+		height: 100%;
+		/* our sprite is composed of 25 frames 
+		width: 2500%;
+		background: url(../img/ink2.png) no-repeat 0 0;
+		background-size: 100% 100%;
+	}
+
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.opening .bg-layer {
+		@include animation(cd-sequence .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	&.closing .bg-layer {
+		@include animation(cd-sequence-reverse .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	.no-cssanimations & {
+		display: none;
+	}
 }
 
 .cd-transition-layer3 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 25;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  visibility: hidden;
-  overflow: hidden;
-}
-.cd-transition-layer3 .bg-layer {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translateY(-50%) translateX(-2%);
-  -ms-transform: translateY(-50%) translateX(-2%);
-  transform: translateY(-50%) translateX(-2%);
-  /* its dimentions will be overwritten using jQuery to proportionally fit the viewport */
-  height: 100%;
-  /* our sprite is composed of 25 frames */
-  width: 2500%;
-  background: url(../img/ink3.png) no-repeat 0 0;
-  background-size: 100% 100%;
-}
-.cd-transition-layer3.visible {
-  opacity: 1;
-  visibility: visible;
-}
-.cd-transition-layer3.opening .bg-layer {
-  -webkit-animation: cd-sequence 0.8s steps(24);
-  animation: cd-sequence 0.8s steps(24);
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.cd-transition-layer3.closing .bg-layer {
-  -webkit-animation: cd-sequence-reverse 0.8s steps(24);
-  animation: cd-sequence-reverse 0.8s steps(24);
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.no-cssanimations .cd-transition-layer3 {
-  display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 25;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+
+	.bg-layer {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include transform(translateY(-50%) translateX(-2%));
+		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport 
+		height: 100%;
+		/* our sprite is composed of 25 frames 
+		width: 2500%;
+		background: url(../img/ink3.png) no-repeat 0 0;
+		background-size: 100% 100%;
+	}
+
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.opening .bg-layer {
+		@include animation(cd-sequence .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	&.closing .bg-layer {
+		@include animation(cd-sequence-reverse .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	.no-cssanimations & {
+		display: none;
+	}
 }
 
 .cd-transition-layer4 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 25;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  visibility: hidden;
-  overflow: hidden;
-}
-.cd-transition-layer4 .bg-layer {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translateY(-50%) translateX(-2%);
-  -ms-transform: translateY(-50%) translateX(-2%);
-  transform: translateY(-50%) translateX(-2%);
-  /* its dimentions will be overwritten using jQuery to proportionally fit the viewport */
-  height: 100%;
-  /* our sprite is composed of 25 frames */
-  width: 2500%;
-  background: url(../img/ink4.png) no-repeat 0 0;
-  background-size: 100% 100%;
-}
-.cd-transition-layer4.visible {
-  opacity: 1;
-  visibility: visible;
-}
-.cd-transition-layer4.opening .bg-layer {
-  -webkit-animation: cd-sequence 0.8s steps(24);
-  animation: cd-sequence 0.8s steps(24);
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.cd-transition-layer4.closing .bg-layer {
-  -webkit-animation: cd-sequence-reverse 0.8s steps(24);
-  animation: cd-sequence-reverse 0.8s steps(24);
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.no-cssanimations .cd-transition-layer4 {
-  display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 25;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+
+	.bg-layer {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include transform(translateY(-50%) translateX(-2%));
+		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport 
+		height: 100%;
+		/* our sprite is composed of 25 frames 
+		width: 2500%;
+		background: url(../img/ink4.png) no-repeat 0 0;
+		background-size: 100% 100%;
+	}
+
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.opening .bg-layer {
+		@include animation(cd-sequence .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	&.closing .bg-layer {
+		@include animation(cd-sequence-reverse .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	.no-cssanimations & {
+		display: none;
+	}
 }
 
 .cd-transition-layer5 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 25;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  visibility: hidden;
-  overflow: hidden;
-}
-.cd-transition-layer5 .bg-layer {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translateY(-50%) translateX(-2%);
-  -ms-transform: translateY(-50%) translateX(-2%);
-  transform: translateY(-50%) translateX(-2%);
-  /* its dimentions will be overwritten using jQuery to proportionally fit the viewport */
-  height: 100%;
-  /* our sprite is composed of 25 frames */
-  width: 2500%;
-  background: url(../img/ink2.png) no-repeat 0 0;
-  background-size: 100% 100%;
-}
-.cd-transition-layer5.visible {
-  opacity: 1;
-  visibility: visible;
-}
-.cd-transition-layer5.opening .bg-layer {
-  -webkit-animation: cd-sequence 0.8s steps(24);
-  animation: cd-sequence 0.8s steps(24);
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.cd-transition-layer5.closing .bg-layer {
-  -webkit-animation: cd-sequence-reverse 0.8s steps(24);
-  animation: cd-sequence-reverse 0.8s steps(24);
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.no-cssanimations .cd-transition-layer5 {
-  display: none;
-}
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 25;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
 
+	.bg-layer {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include transform(translateY(-50%) translateX(-2%));
+		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport 
+		height: 100%;
+		/* our sprite is composed of 25 frames 
+		width: 2500%;
+		background: url(../img/ink2.png) no-repeat 0 0;
+		background-size: 100% 100%;
+	}
+
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.opening .bg-layer {
+		@include animation(cd-sequence .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	&.closing .bg-layer {
+		@include animation(cd-sequence-reverse .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	.no-cssanimations & {
+		display: none;
+	}
+}*/
 @-webkit-keyframes cd-sequence {
   0% {
     /* translateX(-2%) is used to horizontally center the first frame inside the viewport */

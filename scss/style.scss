@@ -386,25 +386,26 @@ Flex Box
 
 
 .flexcontainer{
-	display: flex;
-	flex-flow: row wrap;
-    min-height:auto;
-    align-items: stretch;
-    order: 2;
-    z-index: 5;
-    flex: 1;
+	display: inline-flex;
+	flex-flow: row;
+    align-items: flex-start;
 }
 
 .smallitem{
-	flex: 1;
+	flex: 1 auto;
+	margin: 2.5%;
+    width: 30%
+
 }
 
 .bigitem{
-	flex: 2;
-	padding: 30px;
-    width: 50%;
-    height: 100%;
+	flex: 2 1;
+	margin: 2.5%;
+	width:60%;
+
 }
+
+
 
 
 /* -------------------------------- 
@@ -475,6 +476,10 @@ Modal window
 		}
 	}
 
+	img{
+		width: 100%;
+	}
+
 	&.visible {
 		opacity: 1;
 		visibility: visible;
@@ -524,6 +529,18 @@ Modal window
 
 .cd-modal3 {
 	@include linearGradient(33deg, darken(#F15060, 30%), #F15060);
+
+	h2 {
+    margin: auto;
+    text-align: center;
+    
+    font: {
+    	size: 2.5rem;
+    	weight: 700;
+    }
+	}
+
+
 }
 
 .cd-modal4 {
@@ -576,10 +593,14 @@ Modal window
 		p {
 			opacity: 0;
 			line-height: 1.6;
-			margin: 2em auto;
 			max-width: 800px;
 			color: $white;
-	}
+		}
+
+		img {
+			opacity: 0;
+		}
+
 }
 
 .visible {
@@ -597,6 +618,14 @@ Modal window
 			animation-name:titleopacity;
 		  	animation-duration: 1s;
 		  	animation-delay: 0.75s;
+		  	animation-timing-function: cubic-bezier(0, 0, 1, 1);
+		  	animation-fill-mode: forwards;
+	  	};
+
+	  	img{
+			animation-name:titleopacity;
+		  	animation-duration: 1s;
+		  	animation-delay: 1.25s;
 		  	animation-timing-function: cubic-bezier(0, 0, 1, 1);
 		  	animation-fill-mode: forwards;
 	  	};
@@ -698,7 +727,7 @@ Transition Layer
 
 -------------------------------- */
 
-.cd-transition-layer1 {
+.cd-transition-general {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -742,6 +771,51 @@ Transition Layer
 	}
 }
 
+
+/*.cd-transition-layer1 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 25;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+
+	.bg-layer {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include transform(translateY(-50%) translateX(-2%));
+		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport 
+		height: 100%;
+		/* our sprite is composed of 25 frames 
+		width: 2500%;
+		background: url(../img/ink1.png) no-repeat 0 0;
+		background-size: 100% 100%;
+	}
+
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.opening .bg-layer {
+		@include animation(cd-sequence .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	&.closing .bg-layer {
+		@include animation(cd-sequence-reverse .8s steps(24));
+		@include animation-fill-mode(forwards);
+	}
+
+	.no-cssanimations & {
+		display: none;
+	}
+}
+
 .cd-transition-layer2 {
 	position: fixed;
 	top: 0;
@@ -758,9 +832,9 @@ Transition Layer
 		left: 50%;
 		top: 50%;
 		@include transform(translateY(-50%) translateX(-2%));
-		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport */
+		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport 
 		height: 100%;
-		/* our sprite is composed of 25 frames */ 
+		/* our sprite is composed of 25 frames 
 		width: 2500%;
 		background: url(../img/ink2.png) no-repeat 0 0;
 		background-size: 100% 100%;
@@ -802,9 +876,9 @@ Transition Layer
 		left: 50%;
 		top: 50%;
 		@include transform(translateY(-50%) translateX(-2%));
-		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport */
+		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport 
 		height: 100%;
-		/* our sprite is composed of 25 frames */ 
+		/* our sprite is composed of 25 frames 
 		width: 2500%;
 		background: url(../img/ink3.png) no-repeat 0 0;
 		background-size: 100% 100%;
@@ -846,9 +920,9 @@ Transition Layer
 		left: 50%;
 		top: 50%;
 		@include transform(translateY(-50%) translateX(-2%));
-		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport */
+		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport 
 		height: 100%;
-		/* our sprite is composed of 25 frames */ 
+		/* our sprite is composed of 25 frames 
 		width: 2500%;
 		background: url(../img/ink4.png) no-repeat 0 0;
 		background-size: 100% 100%;
@@ -890,9 +964,9 @@ Transition Layer
 		left: 50%;
 		top: 50%;
 		@include transform(translateY(-50%) translateX(-2%));
-		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport */
+		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport 
 		height: 100%;
-		/* our sprite is composed of 25 frames */ 
+		/* our sprite is composed of 25 frames 
 		width: 2500%;
 		background: url(../img/ink2.png) no-repeat 0 0;
 		background-size: 100% 100%;
@@ -916,7 +990,7 @@ Transition Layer
 	.no-cssanimations & {
 		display: none;
 	}
-}
+}*/
 
 @include keyframes(cd-sequence) {
 	0% {

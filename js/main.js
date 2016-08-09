@@ -1,27 +1,27 @@
 jQuery(document).ready(function($){
 	//cache some jQuery objects
 	var modalTrigger1 = $('.cd-modal-trigger1'),
-		transitionLayer1 = $('.cd-transition-layer1'),
+		transitionLayer1 = $('.cd-transition-general'),
 		transitionBackground = transitionLayer1.children(),
 		modalWindow1 = $('.cd-modal1');
 
 	var modalTrigger2 = $('.cd-modal-trigger2'),
-		transitionLayer2 = $('.cd-transition-layer2'),
+		transitionLayer2 = $('.cd-transition-general'),
 		transitionBackground = transitionLayer2.children(),
 		modalWindow2 = $('.cd-modal2');
 		
 	var modalTrigger3 = $('.cd-modal-trigger3'),
-		transitionLayer3 = $('.cd-transition-layer3'),
+		transitionLayer3 = $('.cd-transition-general'),
 		transitionBackground3 = transitionLayer3.children(),
 		modalWindow3 = $('.cd-modal3');
 		
 	var modalTrigger4 = $('.cd-modal-trigger4'),
-		transitionLayer4 = $('.cd-transition-layer4'),
+		transitionLayer4 = $('.cd-transition-general'),
 		transitionBackground4 = transitionLayer4.children(),
 		modalWindow4 = $('.cd-modal4');
 		
 	var modalTrigger5 = $('.cd-modal-trigger5'),
-		transitionLayer5 = $('.cd-transition-layer5'),
+		transitionLayer5 = $('.cd-transition-general'),
 		transitionBackground5 = transitionLayer5.children(),
 		modalWindow5 = $('.cd-modal5');				
 
