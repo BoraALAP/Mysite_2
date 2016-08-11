@@ -20,7 +20,6 @@ Primary style
 
 html { 
 	font-size: 62.5%;
-
 	@include scrollbars(1rem, $color-1); 
 }
 
@@ -83,8 +82,12 @@ canvas{
 .jumbotron-text{
 	padding-left: 10%;
 	position: absolute;
-	bottom: -10%;
+	bottom: 0%;
 	z-index:15;
+
+	@include MQ(M) {
+  	bottom:-7.5%;
+  }
 
 }
 
@@ -341,7 +344,7 @@ h3 {
 
 h4{
   font: {
-  	size: 1.5em;
+  	size: 1.3em;
   	weight: 400;
   	family: $primary-font;
   }
@@ -386,22 +389,38 @@ Flex Box
 
 
 .flexcontainer{
-	display: inline-flex;
-	flex-flow: row;
+	display: flex;
+	flex-flow: column;
     align-items: flex-start;
+
+	@include MQ(M) {
+		display: inline-flex;
+		flex-flow: row;
+	}
+
 }
 
 .smallitem{
-	flex: 1 auto;
-	margin: 2.5%;
-    width: 30%
+    flex: 1;
+	width: 100%;
+	padding: 2.5%;
+
+    @include MQ(M) {
+		flex: 1 auto;
+	    width: 30%;
+	}
 
 }
 
 .bigitem{
-	flex: 2 1;
-	margin: 2.5%;
-	width:60%;
+	flex: 1;
+	width: 100%;
+	padding: 2.5%;
+
+	@include MQ(M) {
+		flex: 2 1;
+		width: 60%;
+	}
 
 }
 
@@ -593,7 +612,6 @@ Modal window
 		p {
 			opacity: 0;
 			line-height: 1.6;
-			max-width: 800px;
 			color: $white;
 		}
 
@@ -627,7 +645,7 @@ Modal window
 		  	animation-duration: 1s;
 		  	animation-delay: 1.25s;
 		  	animation-timing-function: cubic-bezier(0, 0, 1, 1);
-		  	animation-fill-mode: forwards;
+		  	animation-fill-mode: forwards; 
 	  	};
 	  }
 };
@@ -656,57 +674,83 @@ Bottom
     /*@include linearGradient(45deg, #f2f2f2,#dddddd);*/
     justify-content: flex-end;
 	align-items: center;
-	padding: 5rem;
+	padding: 2rem;
 
     h2{
     	font: {
-			size: 17rem;
+			size: 10rem;
 			weight: 700;
 		}
-    	text-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4);
+    	text-shadow: 5px 10px 15px rgba(0, 0, 0, 0.7);
     	opacity: 0.25;
     	color:$white;
     	position: relative;
     	right: 0px;
     	bottom: -41px;
-   		z-index: 7;
+   		z-index: 6;
+
+   		@include MQ(M) {
+  			font:{
+  				size: 14rem;
+  			};
+  		}
+
+  		@include MQ(L) {
+  			font:{
+  				size: 17rem;
+  			};
+  		}
     }
+
+    @include MQ(M) {
+  			padding: 5rem;
+  		}
 
 }
 
 .flex-box{
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column wrap;
     min-height:auto;
     align-items: stretch;
     order: 2;
-    z-index: 5;
     flex: 1;
+
+    @include MQ(M) {
+  	flex-flow: row wrap;
+  }
 
 }
 
 .contact, .about {
 	display: flex;
 	align-items: stretch;
-	flex: 1 350px;
+	flex: 1;
     padding: 5%;
 }
 
 
 .contact{
-	order: 1;
+	order: 2;
     @include linearGradient(45deg,$color-2, $color-1);
     color:#fff;
-
+    flex-flow: column;
+    z-index: 7;
+    padding: 15% 5% 20% 5%;
 
     & .bottom-content{
 		width:100%;
 	}
+
+	@include MQ(M) {
+  	order: 1;
+  	padding: 5%
+  }
 }
 
 
 .about{
-	order: 2;
+	order: 1;
 	@include linearGradient(85deg, #f4f4f4, #fff);
 
 	h3{
@@ -716,6 +760,10 @@ Bottom
 	.bold{
 		font-weight: 700;
 	}
+
+	@include MQ(M) {
+  	order: 2;
+  }
 }
 
 
@@ -772,225 +820,7 @@ Transition Layer
 }
 
 
-/*.cd-transition-layer1 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 25;
-	height: 100%;
-	width: 100%;
-	opacity: 0;
-	visibility: hidden;
-	overflow: hidden;
 
-	.bg-layer {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		@include transform(translateY(-50%) translateX(-2%));
-		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport 
-		height: 100%;
-		/* our sprite is composed of 25 frames 
-		width: 2500%;
-		background: url(../img/ink1.png) no-repeat 0 0;
-		background-size: 100% 100%;
-	}
-
-	&.visible {
-		opacity: 1;
-		visibility: visible;
-	}
-
-	&.opening .bg-layer {
-		@include animation(cd-sequence .8s steps(24));
-		@include animation-fill-mode(forwards);
-	}
-
-	&.closing .bg-layer {
-		@include animation(cd-sequence-reverse .8s steps(24));
-		@include animation-fill-mode(forwards);
-	}
-
-	.no-cssanimations & {
-		display: none;
-	}
-}
-
-.cd-transition-layer2 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 25;
-	height: 100%;
-	width: 100%;
-	opacity: 0;
-	visibility: hidden;
-	overflow: hidden;
-
-	.bg-layer {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		@include transform(translateY(-50%) translateX(-2%));
-		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport 
-		height: 100%;
-		/* our sprite is composed of 25 frames 
-		width: 2500%;
-		background: url(../img/ink2.png) no-repeat 0 0;
-		background-size: 100% 100%;
-	}
-
-	&.visible {
-		opacity: 1;
-		visibility: visible;
-	}
-
-	&.opening .bg-layer {
-		@include animation(cd-sequence .8s steps(24));
-		@include animation-fill-mode(forwards);
-	}
-
-	&.closing .bg-layer {
-		@include animation(cd-sequence-reverse .8s steps(24));
-		@include animation-fill-mode(forwards);
-	}
-
-	.no-cssanimations & {
-		display: none;
-	}
-}
-
-.cd-transition-layer3 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 25;
-	height: 100%;
-	width: 100%;
-	opacity: 0;
-	visibility: hidden;
-	overflow: hidden;
-
-	.bg-layer {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		@include transform(translateY(-50%) translateX(-2%));
-		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport 
-		height: 100%;
-		/* our sprite is composed of 25 frames 
-		width: 2500%;
-		background: url(../img/ink3.png) no-repeat 0 0;
-		background-size: 100% 100%;
-	}
-
-	&.visible {
-		opacity: 1;
-		visibility: visible;
-	}
-
-	&.opening .bg-layer {
-		@include animation(cd-sequence .8s steps(24));
-		@include animation-fill-mode(forwards);
-	}
-
-	&.closing .bg-layer {
-		@include animation(cd-sequence-reverse .8s steps(24));
-		@include animation-fill-mode(forwards);
-	}
-
-	.no-cssanimations & {
-		display: none;
-	}
-}
-
-.cd-transition-layer4 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 25;
-	height: 100%;
-	width: 100%;
-	opacity: 0;
-	visibility: hidden;
-	overflow: hidden;
-
-	.bg-layer {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		@include transform(translateY(-50%) translateX(-2%));
-		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport 
-		height: 100%;
-		/* our sprite is composed of 25 frames 
-		width: 2500%;
-		background: url(../img/ink4.png) no-repeat 0 0;
-		background-size: 100% 100%;
-	}
-
-	&.visible {
-		opacity: 1;
-		visibility: visible;
-	}
-
-	&.opening .bg-layer {
-		@include animation(cd-sequence .8s steps(24));
-		@include animation-fill-mode(forwards);
-	}
-
-	&.closing .bg-layer {
-		@include animation(cd-sequence-reverse .8s steps(24));
-		@include animation-fill-mode(forwards);
-	}
-
-	.no-cssanimations & {
-		display: none;
-	}
-}
-
-.cd-transition-layer5 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 25;
-	height: 100%;
-	width: 100%;
-	opacity: 0;
-	visibility: hidden;
-	overflow: hidden;
-
-	.bg-layer {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		@include transform(translateY(-50%) translateX(-2%));
-		/* its dimentions will be overwritten using jQuery to proportionally fit the viewport 
-		height: 100%;
-		/* our sprite is composed of 25 frames 
-		width: 2500%;
-		background: url(../img/ink2.png) no-repeat 0 0;
-		background-size: 100% 100%;
-	}
-
-	&.visible {
-		opacity: 1;
-		visibility: visible;
-	}
-
-	&.opening .bg-layer {
-		@include animation(cd-sequence .8s steps(24));
-		@include animation-fill-mode(forwards);
-	}
-
-	&.closing .bg-layer {
-		@include animation(cd-sequence-reverse .8s steps(24));
-		@include animation-fill-mode(forwards);
-	}
-
-	.no-cssanimations & {
-		display: none;
-	}
-}*/
 
 @include keyframes(cd-sequence) {
 	0% {
@@ -1018,351 +848,166 @@ Transition Layer
 
 ---------------------------------------------------------------- */
 
-/* -------------------------------- 
 
-Form
+#contact-form {
+  min-width: 100%;
+  margin: 0 auto;
 
--------------------------------- */
+  p{
+  	text-align: left;
+  }
 
-.cd-form {
-	
-	width: 100%;
-
-	fieldset {
-
-	}
-
-	legend {
-		padding-bottom: 10px;
-		margin-bottom: 20px;
-		font-size: 2rem;
-		border-bottom: 1px solid $color-3;
-		text-align: center;
-		line-height: 4.5rem;
-		font-weight: 700;
-		color: $white;
-	}
-
-	div {
-		/* form element wrapper */
-		position: relative;
-		margin: 20px 0;
-	}
-
-	h4, .cd-label {
-		font-size: 1.3rem;
-		color: $white;
-		margin-bottom: 10px;
-	}
-
-	.cd-label {
-		display: block;
-	}
-
-	input, textarea, select, label {
-		font-family: $primary-font;
-		font-size: 1.6rem;
-		color: $white;
-	}
-
-	input[type="text"], 
-	input[type="email"], 
-	textarea, 
-	select,
-	legend {
-		display: block;
-		width: 100%;
-		@include appearance(none);
-	}
-
-	input[type="text"], 
-	input[type="email"], 
-	textarea, 
-	select {
-		/* general style for input elements */
-		padding: 12px;
-		border: 1px solid darken($white, 50%);
-		background-color: $color-4;
-		border-radius: .25em;
-		box-shadow: inset 0 1px 6px rgba(#000, .3);
-		@include transition(all .6s);
-
-		&:focus {
-			outline: none;
-			border-color: $white;
-			box-shadow: 0 0 5px rgba($color-2, .2);
-		}
-	}
-
-	.cd-select {
-		/* select element wapper */
-		position: relative;
-
-		&::after {
-			/* arrow icon for select element */
-			content: '';
-			position: absolute;
-			z-index: 1;
-			right: 16px;
-			top: 50%;
-			margin-top: -8px;
-
-			display: block;
-			width: 16px;
-			height: 16px;
-
-			background: url('../img/cd-icon-arrow.svg') no-repeat center center;
-			pointer-events: none;
-		}
-	}
-
-	select {
-		box-shadow: 0 1px 3px rgba(#000, .08);
-		cursor: pointer;
-	}
-
-	select::-ms-expand {
-		display: none;
-	}
-
-	.cd-form-list {
-		margin-top: 16px;
-		@include clearfix;
-	}
-
-	.cd-form-list li {
-		/* wrapper for radio and checkbox input types */
-		display: inline-block;
-		position: relative;
-		@include user-select(none);
-		margin: 0 26px 16px 0;
-		float: left;
-	}
-
-	input[type=radio],
-	input[type=checkbox] {
-		/* hide original check and radio buttons */
-		position: absolute;
-		left: 0;
-		top: 50%;
-		@include transform(translateY(-50%));
-		margin: 0;
-		padding: 0;
-		opacity: 0;
-		z-index: 2;
-	}
-
-	input[type="radio"] + label, 
-	input[type="checkbox"] + label {
-		padding-left: 24px;
-	}
-
-	input[type="radio"] + label::before,
-	input[type="radio"] + label::after,
-	input[type="checkbox"] + label::before,
-	input[type="checkbox"] + label::after {
-		/* custom radio and check boxes */
-		content: '';
-		display: block;
-		position: absolute;
-		left: 0;
-		top: 50%;
-		margin-top: -8px;
-		width: 16px;
-		height: 16px;
-	}
-
-	input[type="radio"] + label::before,
-	input[type="checkbox"] + label::before {
-		border: 1px solid darken($white, 50%);
-		background: $color-4;
-		box-shadow: inset 0 1px 1px rgba(#000, .08);
-	}
-
-	input[type="radio"] + label::before,
-	input[type="radio"] + label::after {
-		border-radius: 50%;
-	}
-
-	input[type="checkbox"] + label::before,
-	input[type="checkbox"] + label::after {
-		border-radius: .25em;
-	}
-
-	input[type="radio"] + label::after,
-	input[type="checkbox"] + label::after {
-		background-color: $color-2;
-		background-position: center center;
-		background-repeat: no-repeat;
-		box-shadow: 0 0 5px rgba($color-2, .4);
-		display: none;
-	}
-
-	input[type="radio"] + label::after {
-		/* custom image for radio button */
-		background-image: url('../img/cd-icon-radio.svg');
-	}
-
-	input[type="checkbox"] + label::after {
-		/* custom image for checkbox */
-		background-image: url('../img/cd-icon-check.svg');
-	}
-
-	input[type="radio"]:focus + label::before,
-	input[type="checkbox"]:focus + label::before {
-		/* add focus effect for radio and check buttons */
-		box-shadow: 0 0 5px rgba($color-2, .6);
-	}
-
-	input[type="radio"]:checked + label::after,
-	input[type="checkbox"]:checked + label::after {
-		display: block;
-	}
-
-	input[type="radio"]:checked + label::before,
-	input[type="radio"]:checked + label::after,
-	input[type="checkbox"]:checked + label::before,
-	input[type="checkbox"]:checked + label::after {
-		@include animation(cd-bounce .3s);
-	}
-
-	textarea {
-		min-height: 150px;
-		resize: vertical;
-		overflow: auto;
-	}
-
-	input[type="submit"] {
-		/* button style */
-		border: none;
-		background: $color-2;
-		border-radius: .25em;
-		padding: 16px 20px;
-		color: $color-4;
-		font-weight: bold;
-		float: right;
-		cursor: pointer;
-		@include font-smoothing;
-		@include appearance(none);
-
-		.no-touch &:hover {
-			background: lighten($color-2, 5%);
-		}
-
-		&:focus {
-			outline: none;
-			background: $color-1;
-		}
-
-		&:active {
-			@include transform(scale(.9));
-		}
-	}
-
-	[required] {
-		background: url('../img/cd-required.svg') no-repeat top right;
-	}
-
-	.error-message p {
-		background: $white;
-		color: $color-3;
-		font-size: 1.4rem;
-		text-align: center;
-		@include font-smoothing;
-		border-radius: .25em;
-		padding: 16px;
-	}
-
-	.error {
-		border-color: $white !important;
-	}
-
-	@include MQ(M) {
-		div {
-			/* form element wrapper */
-			margin: 32px 0;
-		}
-
-			legend + div {
-			/* reduce margin-top for first form element after the legend */
-			margin-top: 20px;
-		}
-
-		h4, .cd-label {
-			font-size: 1.4rem;
-			margin-bottom: 10px;
-		}
-
-		input[type="text"], 
-		input[type="email"], 
-		textarea, 
-		select {
-			padding: 16px;
-		}
-	}
+  @include MQ(L) {
+  	min-width: 70%
+  }
 }
 
-@include keyframes(cd-bounce) {
-	0%, 100% {
-		@include transform(scale(1));
-	}
-
-	50% {
-		@include transform(scale(.8));
-	}
+label {
+  font-weight: 400;
+  cursor: pointer;
 }
 
-/* -------------------------------- 
+textarea,
+input {
+  border: none;
+  outline: none;
+  border-radius: 0;
+  text-align: center;
+  background: none;
+  color: $white;
+  min-width: 70%;
+  padding: 1rem;
+  border: 2px dashed rgba(255, 255, 255, 0);
+  box-sizing: border-box;
+  cursor: text;
 
-Custom icons
+  font:{
+  	weight: 600;
+  	family: $primary-font;
+  	size: 1.6rem;
+  };
 
--------------------------------- */
-
-.cd-form {
-	.icon input, .icon select, .icon textarea {
-		padding-left: 54px !important;
-	}
-
-	.user {
-		background: url('../img/cd-icon-user.svg') no-repeat 16px center;
-	}
-
-	[required].user {
-		background: url('../img/cd-icon-user.svg') no-repeat 16px center, 
-					url('../img/cd-required.svg') no-repeat top right;
-	}
-
-	.company {
-		background: url('../img/cd-icon-company.svg') no-repeat 16px center;
-	}
-
-	[required].company {
-		background: url('../img/cd-icon-company.svg') no-repeat 16px center, 
-					url('../img/cd-required.svg') no-repeat top right;
-	}
-
-	.email {
-		background: url('../img/cd-icon-email.svg') no-repeat 16px center;
-	}
-
-	[required].email {
-		background: url('../img/cd-icon-email.svg') no-repeat 16px center, 
-					url('../img/cd-required.svg') no-repeat top right;
-	}
-
-	.budget {
-		background: url('../img/cd-icon-budget.svg') no-repeat 16px center;
-	}
-
-	.message {
-		background: url('../img/cd-icon-message.svg') no-repeat 16px 16px;
-	}
-
-	[required].message {
-		background: url('../img/cd-icon-message.svg') no-repeat 16px 16px, 
-					url('../img/cd-required.svg') no-repeat top right;
-	}
+  @include MQ(M) {
+  	min-width: 50%
+  }
 }
+
+textarea {
+  text-align: left;
+  /* overflow:hidden; */
+  
+  resize: none;
+  width: 100%;
+  border-color: rgba(255, 255, 255, 0)
+}
+
+textarea:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px dashed rgba(255, 255, 255, 1);
+}
+
+textarea:focus:required:valid {
+  border: 2px solid rgba(255, 255, 255, 0);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+textarea:required:valid {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+input {
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
+}
+
+input:required,
+textarea:required {
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
+}
+
+input:focus {
+  border-bottom: 2px dashed rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+input:required:valid {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+input:required:invalid {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+::placeholder {
+  text-align: center;
+  color: rgba( $white, .5 );
+  font:{
+  	style: italic;
+  	weight: 400;
+  	size:1.6rem;
+  };
+}
+
+.expanding {
+  vertical-align: top;
+}
+
+.send-icn {
+  fill: rgba(255, 255, 255, 1)
+}
+
+.send-icn:hover {
+  fill: rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  margin: 2vmax 0;
+  color: $color-1;
+  background-color: $white;
+  padding: 1rem 4rem;
+  font-size: 1.6rem;
+  box-shadow: 3px 4px 20px $color-2;
+
+
+   font: {
+  	size: 1.6rem;
+  	family: $primary-font;
+  	weight: 600;
+  }
+
+  &:active{
+  	transform: translateY(2px);
+  	background-color:rgba($white, 0);
+  	color:$white;
+  	box-shadow: 0px 0px 20px rgba($color-1, 0.5);
+  };
+
+  @include transition(all .15s);
+
+
+}
+
+
+legend {
+    margin: 2rem auto 50px auto;
+    text-align: center;
+    line-height: 3.5rem;
+    font:{
+    	size: 2rem;
+    	weight: 700;
+    }
+
+    @include MQ(M) {
+  			margin: 0 auto 50px auto;	
+  		}
+}
+
+
 
 /* -------------------------------- 
 
