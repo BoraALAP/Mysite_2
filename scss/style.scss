@@ -499,6 +499,10 @@ Modal window
 		width: 100%;
 	}
 
+	p{
+		margin-bottom: 30px;
+	}
+
 	&.visible {
 		opacity: 1;
 		visibility: visible;

@@ -577,6 +577,9 @@ Modal window
 .cd-modal-general img {
   width: 100%;
 }
+.cd-modal-general p {
+  margin-bottom: 30px;
+}
 .cd-modal-general.visible {
   opacity: 1;
   visibility: visible;
