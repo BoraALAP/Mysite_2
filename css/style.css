@@ -47,6 +47,16 @@ canvas {
   vertical-align: bottom;
 }
 
+::-moz-selection {
+  color: #FFFFFF;
+  background-color: #780001;
+}
+
+::selection {
+  color: #FFFFFF;
+  background-color: #780001;
+}
+
 /* -------------------------------- 
 
   Enterence
@@ -334,23 +344,23 @@ Patterns - reusable parts of our design
 }
 .cd-btn:nth-of-type(5) {
   /*background-image: url(../img/img-2.jpg);*/
-  background: #3B6E98;
+  background: #022337;
   /* Old browsers */
   /* FF3.6+ */
   /* Chrome,Safari4+ */
   /* Chrome10+,Safari5.1+ */
   /* Opera 11.10+ */
   /* IE10+ */
-  background: linear-gradient(33deg, #3B6E98 0%, #1e394f 85%);
+  background: linear-gradient(33deg, #022337 0%, #1f0746 85%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
   /* IE6-9 */
 }
 .cd-btn:nth-of-type(5):before {
-  background-image: url(../img/logo/meridian_logo_rev.svg);
+  background-image: url(../img/logo/promescent.svg);
   content: " ";
   width: 200px;
-  height: 30px;
+  height: 55px;
   color: #FFFFFF;
   background-size: contain;
   position: relative;
@@ -485,6 +495,9 @@ Flex Box
             flex: 1 auto;
     width: 30%;
   }
+}
+.smallitem img + p {
+  font-size: 1.5rem !important;
 }
 
 .bigitem {
@@ -681,17 +694,20 @@ Modal window
 }
 
 .cd-modal5 {
-  background: #4c88ba;
+  background: #022337;
   /* Old browsers */
   /* FF3.6+ */
   /* Chrome,Safari4+ */
   /* Chrome10+,Safari5.1+ */
   /* Opera 11.10+ */
   /* IE10+ */
-  background: linear-gradient(33deg, #4c88ba 0%, #101e2a 85%);
+  background: linear-gradient(33deg, #022337 0%, #1f0746 85%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
   /* IE6-9 */
+}
+.cd-modal5 h2 > a {
+  color: #FFFFFF;
 }
 
 .modal-content {
@@ -721,6 +737,11 @@ Modal window
   background: url(../img/ink-separation.svg) no-repeat center center;
   margin: .2em auto 0;
 }
+.modal-content h2 {
+  text-align: center;
+  opacity: 0;
+  margin-bottom: 2rem;
+}
 .modal-content p {
   opacity: 0;
   line-height: 1.6;
@@ -737,6 +758,18 @@ Modal window
           animation-duration: 1s;
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
+  -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+          animation-timing-function: cubic-bezier(0, 0, 1, 1);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.visible .modal-content h2 {
+  -webkit-animation-name: titleopacity;
+          animation-name: titleopacity;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
   -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
           animation-timing-function: cubic-bezier(0, 0, 1, 1);
   -webkit-animation-fill-mode: forwards;

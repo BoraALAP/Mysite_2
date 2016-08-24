@@ -50,6 +50,11 @@ canvas{
   vertical-align:bottom;
 }
 
+::selection{
+	color:$white;
+	background-color: $color-1;
+}
+
 /* -------------------------------- 
 
   Enterence
@@ -267,13 +272,13 @@ Patterns - reusable parts of our design
 
     &:nth-of-type(5){
 		/*background-image: url(../img/img-2.jpg);*/
-    	@include linearGradient(33deg, #3B6E98, darken(#3B6E98, 20%));
+    	@include linearGradient(33deg, #022337, #1f0746);
 
     		&:before{
-	    	background-image: url(../img/logo/meridian_logo_rev.svg);
+	    	background-image: url(../img/logo/promescent.svg);
 	    	content: " ";
 	    	width:200px;
-	    	height: 30px;
+	    	height: 55px;
 	    	color: $white;
     		background-size: contain;
 		    position: relative;
@@ -408,6 +413,12 @@ Flex Box
     @include MQ(M) {
 		flex: 1 auto;
 	    width: 30%;
+	}
+
+	img + p{
+		font:{
+			size:1.5rem !important;
+		}
 	}
 
 }
@@ -575,10 +586,16 @@ Modal window
 	p{
 		color: $color-2 !important;
 	}
+
+	
 }
 
 .cd-modal5 {
-	@include linearGradient(33deg, lighten(#3B6E98,10%), darken(#3B6E98, 30%));
+	@include linearGradient(33deg, #022337, #1f0746);
+
+	h2 > a{
+		color:$white;
+	}
 }
 
 .modal-content{
@@ -613,6 +630,12 @@ Modal window
 			}
 		}
 
+		h2{
+			text-align: center;
+			opacity: 0;
+			margin-bottom: 2rem;
+		}
+
 		p {
 			opacity: 0;
 			line-height: 1.6;
@@ -632,6 +655,14 @@ Modal window
 			animation-name:titleopacity;
 		  	animation-duration: 1s;
 		  	animation-delay: 0.5s;
+		  	animation-timing-function: cubic-bezier(0, 0, 1, 1);
+		  	animation-fill-mode: forwards;
+	  	};
+
+	  	h2{
+			animation-name:titleopacity;
+		  	animation-duration: 1s;
+		  	animation-delay: 0.7s;
 		  	animation-timing-function: cubic-bezier(0, 0, 1, 1);
 		  	animation-fill-mode: forwards;
 	  	};

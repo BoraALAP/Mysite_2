@@ -79,15 +79,15 @@ jQuery(document).ready(function($){
 		}, delay);
 	});
 
-	modalTrigger5.on('click', function(event){	
-		event.preventDefault();
-		transitionLayer5.addClass('visible opening');
-		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
-		$('body').css('overflow','hidden');
-		setTimeout(function(){
-			modalWindow5.addClass('visible');
-		}, delay);
-	});
+	// modalTrigger5.on('click', function(event){	
+	// 	event.preventDefault();
+	// 	transitionLayer5.addClass('visible opening');
+	// 	var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
+	// 	$('body').css('overflow','hidden');
+	// 	setTimeout(function(){
+	// 		modalWindow5.addClass('visible');
+	// 	}, delay);
+	// });
 
 	//close modal window
 	modalWindow1.on('click', '.modal-close', function(event){
