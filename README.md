@@ -1,9 +1,3 @@
-Ink Transition Effect
-=========
-An ink bleed transition effect, powered by CSS animations.
+This is my Personal Site. 
 
-[Article on CodyHouse](https://codyhouse.co/gem/ink-transition-effect/)
-
-[Demo](https://codyhouse.co/demo/ink-transition-effect/index.html)
- 
-[Terms](https://codyhouse.co/terms/)
+Please don't steal it. or if you do improve it and send it back :) 
