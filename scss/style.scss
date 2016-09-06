@@ -415,6 +415,10 @@ Flex Box
 	    width: 30%;
 	}
 
+	img{
+		width: 100%;
+	}
+
 	img + p{
 		font:{
 			size:1.5rem !important;
@@ -425,24 +429,10 @@ Flex Box
 
 }
 
-.bigitem{
-	flex: 1;
-	width: 100%;
-	padding: 2.5%;
-
-	@include MQ(M) {
-		flex: 2 1;
-		width: 60%;
-	}
-
-}
-
-
-
 
 /* -------------------------------- 
 
-Main Content
+Main Content Containers
 
 -------------------------------- */
 
@@ -461,6 +451,33 @@ Main Content
     align-self: center;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
     
+}
+
+.webpageslist{
+	background-color: $white;
+	padding: 0 5rem;
+	z-index: 20;
+	position: relative;
+
+	a{
+		color:$color-1;
+	}
+
+	p{
+		text-align: center;
+		font:{
+			weight:700;
+		};
+	}
+
+	.smallitem{
+
+		background-color:$white;
+		&:hover{
+			background-color:rgba($color-2, .1);
+			@include transition(background-color 0.6s);
+		};
+	}
 }
 
 
@@ -491,7 +508,7 @@ Modal window
 		height: 45px;
 		width: 45px;
 		border-radius: 50%;
-		background: rgba(#000, .3) url(../img/cd-icon-close.svg) no-repeat center center;
+		background: rgba(#000, .5) url(../img/cd-icon-close.svg) no-repeat center center;
 		
 		/* image replacement */
 		overflow: hidden;
@@ -504,12 +521,9 @@ Modal window
 		@include transition(transform .3s 0s, visibility 0s .3s, opacity .3s 0s);
 
 		.no-touch &:hover {
-			background-color: rgba(#000, .5);
+			background-color: rgba(#000, .75);
+			transition: (background-color, 0.4s, ease);
 		}
-	}
-
-	img{
-		width: 100%;
 	}
 
 	p{
@@ -560,6 +574,15 @@ Modal window
 
 .cd-modal2 {
 	@include linearGradient(33deg, lighten(#3B6E98,10%), darken(#3B6E98, 30%));
+
+	.modal-close{
+		background: rgba($white, .5) url(../img/cd-icon-close2.svg) no-repeat center center;
+		background-size: 24px 24px;
+
+		.no-touch &:hover {
+			background-color: rgba($white, .75);
+		}
+	}
 }
 
 
@@ -597,6 +620,15 @@ Modal window
 
 	h2 > a{
 		color:$white;
+	}
+
+	.modal-close{
+		background: rgba($white, .5) url(../img/cd-icon-close2.svg) no-repeat center center;
+		background-size: 24px 24px;
+
+		.no-touch &:hover {
+			background-color: rgba($white, .75);
+		}
 	}
 }
 
@@ -801,6 +833,16 @@ Bottom
 	@include MQ(M) {
   	order: 2;
   }
+}
+
+.clickhere{
+	border-bottom:1px solid rgba(30, 0, 1, 0);
+
+	&:hover{
+		letter-spacing: 5px;
+		border-bottom:1px solid rgba(30, 0, 1, 1);
+		@include transition(letter-spacing .3s 0s, border-bottom .4s .3s);
+	}
 }
 
 

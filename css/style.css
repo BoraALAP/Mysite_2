@@ -496,29 +496,16 @@ Flex Box
     width: 30%;
   }
 }
+.smallitem img {
+  width: 100%;
+}
 .smallitem img + p {
   font-size: 1.5rem !important;
 }
 
-.bigitem {
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  width: 100%;
-  padding: 2.5%;
-}
-@media only screen and (min-width: 768px) {
-  .bigitem {
-    -webkit-flex: 2 1;
-        -ms-flex: 2 1;
-            flex: 2 1;
-    width: 60%;
-  }
-}
-
 /* -------------------------------- 
 
-Main Content
+Main Content Containers
 
 -------------------------------- */
 .cd-main-content {
@@ -541,6 +528,27 @@ Main Content
       -ms-flex-item-align: center;
           align-self: center;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.webpageslist {
+  background-color: #FFFFFF;
+  padding: 0 5rem;
+  z-index: 20;
+  position: relative;
+}
+.webpageslist a {
+  color: #780001;
+}
+.webpageslist p {
+  text-align: center;
+  font-weight: 700;
+}
+.webpageslist .smallitem {
+  background-color: #FFFFFF;
+}
+.webpageslist .smallitem:hover {
+  background-color: rgba(30, 0, 1, 0.1);
+  transition: background-color 0.6s;
 }
 
 /* -------------------------------- 
@@ -570,7 +578,7 @@ Modal window
   height: 45px;
   width: 45px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.3) url(../img/cd-icon-close.svg) no-repeat center center;
+  background: rgba(0, 0, 0, 0.5) url(../img/cd-icon-close.svg) no-repeat center center;
   /* image replacement */
   overflow: hidden;
   text-indent: 100%;
@@ -585,10 +593,8 @@ Modal window
   transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
 }
 .no-touch .cd-modal-general .modal-close:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.cd-modal-general img {
-  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: background-color, 0.4s, ease;
 }
 .cd-modal-general p {
   margin-bottom: 30px;
@@ -652,6 +658,13 @@ Modal window
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
   /* IE6-9 */
 }
+.cd-modal2 .modal-close {
+  background: rgba(255, 255, 255, 0.5) url(../img/cd-icon-close2.svg) no-repeat center center;
+  background-size: 24px 24px;
+}
+.no-touch .cd-modal2 .modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
 
 .cd-modal3 {
   background: #9c0c1b;
@@ -708,6 +721,13 @@ Modal window
 }
 .cd-modal5 h2 > a {
   color: #FFFFFF;
+}
+.cd-modal5 .modal-close {
+  background: rgba(255, 255, 255, 0.5) url(../img/cd-icon-close2.svg) no-repeat center center;
+  background-size: 24px 24px;
+}
+.no-touch .cd-modal5 .modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 .modal-content {
@@ -966,6 +986,15 @@ Bottom
         -ms-flex-order: 2;
             order: 2;
   }
+}
+
+.clickhere {
+  border-bottom: 1px solid rgba(30, 0, 1, 0);
+}
+.clickhere:hover {
+  letter-spacing: 5px;
+  border-bottom: 1px solid #1e0001;
+  transition: letter-spacing 0.3s 0s, border-bottom 0.4s 0.3s;
 }
 
 /* -------------------------------- 
