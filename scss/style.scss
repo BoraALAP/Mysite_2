@@ -470,14 +470,114 @@ Main Content Containers
 		};
 	}
 
-	.smallitem{
+	.flexcontainer{
 
-		background-color:$white;
-		&:hover{
-			background-color:rgba($color-2, .1);
-			@include transition(background-color 0.6s);
-		};
+		&:nth-of-type(1){
+	
+
+			.smallitem{
+
+				&:nth-of-type(1){
+					img{
+						box-shadow: none;
+						&:hover{
+							@include boxShadow(lighten($color-1, 10%), 2px);
+							@include transition(box-shadow 0.6s);
+						};
+					}
+				}
+				&:nth-of-type(2){
+					img{
+						box-shadow: none;
+						&:hover{
+							@include boxShadow($color-1, 2px);
+							@include transition(box-shadow 0.6s);
+						};
+					}
+				}
+				&:nth-of-type(3){
+					img{
+						box-shadow: none;
+						&:hover{
+							@include boxShadow(darken($color-1, 10%), 2px);
+							@include transition(box-shadow 0.6s);
+						};
+					}
+				}	
+			}
+		}
+
+		&:nth-of-type(2){
+	
+
+			.smallitem{
+
+				&:nth-of-type(1){
+					img{
+						box-shadow: none;
+						&:hover{
+							@include boxShadow(lighten(#b30046, 10%), 2px);
+							@include transition(box-shadow 0.6s);
+						};
+					}
+				}
+				&:nth-of-type(2){
+					img{
+						box-shadow: none;
+						&:hover{
+							@include boxShadow(#b30046, 2px);
+							@include transition(box-shadow 0.6s);
+						};
+					}
+				}
+				&:nth-of-type(3){
+					img{
+						box-shadow: none;
+						&:hover{
+							@include boxShadow(darken(#b30046, 10%), 2px);
+							@include transition(box-shadow 0.6s);
+						};
+					}
+				}	
+			}
+		}
+
+		&:nth-of-type(3){
+	
+
+			.smallitem{
+
+				&:nth-of-type(1){
+					img{
+						box-shadow: none;
+						&:hover{
+							@include boxShadow(lighten(#ca4f00, 10%), 2px);
+							@include transition(box-shadow 0.6s);
+						};
+					}
+				}
+				&:nth-of-type(2){
+					img{
+						box-shadow: none;
+						&:hover{
+							@include boxShadow(#ca4f00, 2px);
+							@include transition(box-shadow 0.6s);
+						};
+					}
+				}
+				&:nth-of-type(3){
+					img{
+						box-shadow: none;
+						&:hover{
+							@include boxShadow(darken(#ca4f00, 10%), 2px);
+							@include transition(box-shadow 0.6s);
+						};
+					}
+				}	
+			}
+		}
 	}
+	
 }
 
 

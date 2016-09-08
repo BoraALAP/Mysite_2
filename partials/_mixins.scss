@@ -69,3 +69,12 @@
     scrollbar-track-color: $background-color;
   }
 }
+
+
+// Box Shadow 
+
+@mixin boxShadow($colortone, $bottom){
+    box-shadow: rgba($colortone, .2) 0px $bottom *2 $bottom *2, rgba($colortone, .2) 0px $bottom *2*2 $bottom *2*2, rgba($colortone, .2) 0px $bottom *2*2*2 $bottom *2*2*2, rgba($colortone, .2) 0px $bottom *2*2*2*2 $bottom *2*2*2*2, rgba($colortone, .2) 0px $bottom *2*2*2*2*2 $bottom *2*2*2*2*2;
+    
+}
+
