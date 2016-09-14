@@ -476,29 +476,29 @@ Main Content Containers
 	
 
 			.smallitem{
+				img{
+						box-shadow: none;
+					}
 
 				&:nth-of-type(1){
-					img{
-						box-shadow: none;
-						&:hover{
+					&:hover{
+						img{
 							@include boxShadow(lighten($color-1, 10%), 2px);
 							@include transition(box-shadow 0.6s);
 						};
 					}
 				}
 				&:nth-of-type(2){
-					img{
-						box-shadow: none;
-						&:hover{
+					&:hover{
+						img{
 							@include boxShadow($color-1, 2px);
 							@include transition(box-shadow 0.6s);
 						};
 					}
 				}
 				&:nth-of-type(3){
-					img{
-						box-shadow: none;
-						&:hover{
+					&:hover{
+						img{
 							@include boxShadow(darken($color-1, 10%), 2px);
 							@include transition(box-shadow 0.6s);
 						};
@@ -511,29 +511,25 @@ Main Content Containers
 	
 
 			.smallitem{
-
 				&:nth-of-type(1){
-					img{
-						box-shadow: none;
-						&:hover{
+					&:hover{
+						img{
 							@include boxShadow(lighten(#b30046, 10%), 2px);
 							@include transition(box-shadow 0.6s);
 						};
 					}
 				}
 				&:nth-of-type(2){
-					img{
-						box-shadow: none;
-						&:hover{
+					&:hover{
+						img{
 							@include boxShadow(#b30046, 2px);
 							@include transition(box-shadow 0.6s);
 						};
 					}
 				}
 				&:nth-of-type(3){
-					img{
-						box-shadow: none;
-						&:hover{
+					&:hover{
+						img{
 							@include boxShadow(darken(#b30046, 10%), 2px);
 							@include transition(box-shadow 0.6s);
 						};
@@ -543,32 +539,26 @@ Main Content Containers
 		}
 
 		&:nth-of-type(3){
-	
-
 			.smallitem{
-
 				&:nth-of-type(1){
-					img{
-						box-shadow: none;
-						&:hover{
+					&:hover{
+						img{
 							@include boxShadow(lighten(#ca4f00, 10%), 2px);
 							@include transition(box-shadow 0.6s);
-						};
+						}
 					}
 				}
 				&:nth-of-type(2){
-					img{
-						box-shadow: none;
-						&:hover{
+					&:hover{
+						img{
 							@include boxShadow(#ca4f00, 2px);
 							@include transition(box-shadow 0.6s);
 						};
 					}
 				}
 				&:nth-of-type(3){
-					img{
-						box-shadow: none;
-						&:hover{
+					&:hover{
+						img{
 							@include boxShadow(darken(#ca4f00, 10%), 2px);
 							@include transition(box-shadow 0.6s);
 						};
