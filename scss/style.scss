@@ -155,9 +155,11 @@ canvas{
 @keyframes titleopacity {
     0% {
         opacity: 0;
+        transform: translateX(-20px);
     }
     100% {
         opacity: 1;
+        transform: translateX(0);
     }
 }
 
@@ -199,6 +201,9 @@ Patterns - reusable parts of our design
 	}
 
 
+
+
+
 	&:nth-of-type(1){
     	/*background-image: url(../img/img-1.jpg);*/
     	@include linearGradient(33deg, darken(#CB0076, 10%), #CB0076); 
@@ -213,6 +218,8 @@ Patterns - reusable parts of our design
 		    position: relative;
 		    background-repeat: no-repeat;
 		    background-position: 50% 50%;
+		    opacity: 0;
+			animation:titleopacity 2s 3.5s cubic-bezier(0, 0, 1, 1) forwards;
 	    }
     }
 
@@ -230,6 +237,8 @@ Patterns - reusable parts of our design
 		    position: relative;
 		    background-repeat: no-repeat;
 		    background-position: 50% 50%;
+		    opacity: 0;
+		    animation:titleopacity 2s 4s cubic-bezier(0, 0, 1, 1) forwards;
 	    }
     }
 
@@ -247,6 +256,8 @@ Patterns - reusable parts of our design
 		    position: relative;
 		    background-repeat: no-repeat;
 		    background-position: 50% 50%;
+		    opacity: 0;
+		    animation:titleopacity 2s 4.5s cubic-bezier(0, 0, 1, 1) forwards;
 	    }
     }
 
@@ -264,6 +275,8 @@ Patterns - reusable parts of our design
 		    position: relative;
 		    background-repeat: no-repeat;
 		    background-position: 50% 50%;
+		    opacity: 0;
+		    animation:titleopacity 2s 5s cubic-bezier(0, 0, 1, 1) forwards;
 	    }
 	    h5{
 	    	color: $color-3;
@@ -284,6 +297,8 @@ Patterns - reusable parts of our design
 		    position: relative;
 		    background-repeat: no-repeat;
 		    background-position: 50% 50%;
+		    opacity: 0;
+		    animation:titleopacity 2s 5.5s cubic-bezier(0, 0, 1, 1) forwards;
 	    }
     } 
 
@@ -540,7 +555,7 @@ Main Content Containers
 
 		&:nth-of-type(3){
 			.smallitem{
-				&:nth-of-type(1){
+				&:nth-of-type(1){ 
 					&:hover{
 						img{
 							@include boxShadow(lighten(#ca4f00, 10%), 2px);
@@ -1021,6 +1036,10 @@ Transition Layer
 #contact-form {
   min-width: 100%;
   margin: 0 auto;
+  transition: opacity 1.5s ease;
+  &.nonactive{
+  	opacity: 0;
+  }
 
   p{
   	text-align: left;
@@ -1176,7 +1195,27 @@ legend {
   		}
 }
 
+.alert {
+    margin: 4rem auto 50px auto;
+    text-align: center;
+    line-height: 3.5rem;
+    font:{
+    	size: 3rem;
+    	weight: 700;
+    }
 
+    @include MQ(M) {
+  			margin: 0 auto 50px auto;	
+  		}
+}
+
+.messages{
+	opacity: 0;
+	transition: opacity 1.5s ease-in;
+	&.active{
+		opacity: 1;
+	}
+}
 
 /* -------------------------------- 
 

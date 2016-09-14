@@ -185,17 +185,25 @@ canvas {
 @-webkit-keyframes titleopacity {
   0% {
     opacity: 0;
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
   }
   100% {
     opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 @keyframes titleopacity {
   0% {
     opacity: 0;
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
   }
   100% {
     opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 .skew-content {
@@ -263,6 +271,9 @@ Patterns - reusable parts of our design
   position: relative;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  opacity: 0;
+  -webkit-animation: titleopacity 2s 3.5s cubic-bezier(0, 0, 1, 1) forwards;
+          animation: titleopacity 2s 3.5s cubic-bezier(0, 0, 1, 1) forwards;
 }
 .cd-btn:nth-of-type(2) {
   /*background-image: url(../img/img-2.jpg);*/
@@ -288,6 +299,9 @@ Patterns - reusable parts of our design
   position: relative;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  opacity: 0;
+  -webkit-animation: titleopacity 2s 4s cubic-bezier(0, 0, 1, 1) forwards;
+          animation: titleopacity 2s 4s cubic-bezier(0, 0, 1, 1) forwards;
 }
 .cd-btn:nth-of-type(3) {
   /*background-image: url(../img/img-3.jpg);*/
@@ -313,6 +327,9 @@ Patterns - reusable parts of our design
   position: relative;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  opacity: 0;
+  -webkit-animation: titleopacity 2s 4.5s cubic-bezier(0, 0, 1, 1) forwards;
+          animation: titleopacity 2s 4.5s cubic-bezier(0, 0, 1, 1) forwards;
 }
 .cd-btn:nth-of-type(4) {
   /*background-image: url(../img/img-1.jpg);*/
@@ -338,6 +355,9 @@ Patterns - reusable parts of our design
   position: relative;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  opacity: 0;
+  -webkit-animation: titleopacity 2s 5s cubic-bezier(0, 0, 1, 1) forwards;
+          animation: titleopacity 2s 5s cubic-bezier(0, 0, 1, 1) forwards;
 }
 .cd-btn:nth-of-type(4) h5 {
   color: #6a6a6a;
@@ -366,6 +386,9 @@ Patterns - reusable parts of our design
   position: relative;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  opacity: 0;
+  -webkit-animation: titleopacity 2s 5.5s cubic-bezier(0, 0, 1, 1) forwards;
+          animation: titleopacity 2s 5.5s cubic-bezier(0, 0, 1, 1) forwards;
 }
 .cd-btn:hover {
   -webkit-flex-grow: 2;
@@ -406,7 +429,7 @@ Typography
 h1 {
   font-size: 4rem;
   font-weight: 400;
-  font-family: "Arima Madurai", serif;
+  font-family: "Mukta Vaani", sans-serif;
   font-style: normal;
   margin-bottom: 1.25rem;
   color: #780001;
@@ -420,7 +443,7 @@ h1 {
 h3 {
   font-size: 1.8rem;
   font-weight: 700;
-  font-family: "Arima Madurai", serif;
+  font-family: "Mukta Vaani", sans-serif;
   font-style: normal;
   margin-bottom: 1.25rem;
   color: #780001;
@@ -1131,6 +1154,10 @@ Transition Layer
 #contact-form {
   min-width: 100%;
   margin: 0 auto;
+  transition: opacity 1.5s ease;
+}
+#contact-form.nonactive {
+  opacity: 0;
 }
 #contact-form p {
   text-align: left;
@@ -1294,6 +1321,27 @@ legend {
   legend {
     margin: 0 auto 50px auto;
   }
+}
+
+.alert {
+  margin: 4rem auto 50px auto;
+  text-align: center;
+  line-height: 3.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+}
+@media only screen and (min-width: 768px) {
+  .alert {
+    margin: 0 auto 50px auto;
+  }
+}
+
+.messages {
+  opacity: 0;
+  transition: opacity 1.5s ease-in;
+}
+.messages.active {
+  opacity: 1;
 }
 
 /* -------------------------------- 
