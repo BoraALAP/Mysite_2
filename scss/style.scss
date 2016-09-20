@@ -71,7 +71,7 @@ canvas{
     position: fixed;
     left: 0;
     top: 0;
-    opacity: 0.3;
+    opacity: 0;
     box-sizing: border-box;
     overflow: hidden;
     width: 100%;
@@ -79,6 +79,7 @@ canvas{
     animation-iteration-count: infinite;
     animation-duration: 180s;
     animation-timing-function: cubic-bezier(0, 0, 1, 1);
+    mix-blend-mode: overlay;
 
 }
 
@@ -144,7 +145,11 @@ canvas{
 
 @keyframes imageanimation {
     0% {
-        transform: translateY(-80px);
+        transform: translateY(-480px);
+        opacity: 0;
+    }
+    2% {
+    	opacity: 0.6;
     }
     100% {
         transform: translateY(-8500px);
@@ -193,6 +198,8 @@ Patterns - reusable parts of our design
 	align-items: center;
 	flex-direction: row;
 	opacity: .9;
+
+	cursor: crosshair;
 
 	
 
@@ -286,6 +293,7 @@ Patterns - reusable parts of our design
     &:nth-of-type(5){
 		/*background-image: url(../img/img-2.jpg);*/
     	@include linearGradient(33deg, #022337, #1f0746);
+    	cursor: default;
 
     		&:before{
 	    	background-image: url(../img/logo/promescent.svg);
@@ -299,6 +307,8 @@ Patterns - reusable parts of our design
 		    background-position: 50% 50%;
 		    opacity: 0;
 		    animation:titleopacity 2s 5.5s cubic-bezier(0, 0, 1, 1) forwards;
+
+
 	    }
     } 
 
@@ -942,11 +952,12 @@ Bottom
 
 .clickhere{
 	border-bottom:1px solid rgba(30, 0, 1, 0);
+	@include transition(letter-spacing .3s 0s, border-bottom .4s .3s);
 
 	&:hover{
 		letter-spacing: 5px;
 		border-bottom:1px solid rgba(30, 0, 1, 1);
-		@include transition(letter-spacing .3s 0s, border-bottom .4s .3s);
+		
 	}
 }
 

@@ -81,7 +81,7 @@ canvas {
   position: fixed;
   left: 0;
   top: 0;
-  opacity: 0.3;
+  opacity: 0;
   box-sizing: border-box;
   overflow: hidden;
   width: 100%;
@@ -93,6 +93,7 @@ canvas {
           animation-duration: 180s;
   -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
           animation-timing-function: cubic-bezier(0, 0, 1, 1);
+  mix-blend-mode: overlay;
 }
 
 .jumbotron-text {
@@ -163,8 +164,12 @@ canvas {
 
 @-webkit-keyframes imageanimation {
   0% {
-    -webkit-transform: translateY(-80px);
-            transform: translateY(-80px);
+    -webkit-transform: translateY(-480px);
+            transform: translateY(-480px);
+    opacity: 0;
+  }
+  2% {
+    opacity: 0.6;
   }
   100% {
     -webkit-transform: translateY(-8500px);
@@ -174,8 +179,12 @@ canvas {
 
 @keyframes imageanimation {
   0% {
-    -webkit-transform: translateY(-80px);
-            transform: translateY(-80px);
+    -webkit-transform: translateY(-480px);
+            transform: translateY(-480px);
+    opacity: 0;
+  }
+  2% {
+    opacity: 0.6;
   }
   100% {
     -webkit-transform: translateY(-8500px);
@@ -243,6 +252,7 @@ Patterns - reusable parts of our design
       -ms-flex-direction: row;
           flex-direction: row;
   opacity: .9;
+  cursor: crosshair;
 }
 .no-touch .cd-btn:hover {
   box-shadow: 0 0px 30px rgba(0, 0, 0, 0.6);
@@ -375,6 +385,7 @@ Patterns - reusable parts of our design
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
   /* IE6-9 */
+  cursor: default;
 }
 .cd-btn:nth-of-type(5):before {
   background-image: url(../img/logo/promescent.svg);
@@ -1045,11 +1056,11 @@ Bottom
 
 .clickhere {
   border-bottom: 1px solid rgba(30, 0, 1, 0);
+  transition: letter-spacing 0.3s 0s, border-bottom 0.4s 0.3s;
 }
 .clickhere:hover {
   letter-spacing: 5px;
   border-bottom: 1px solid #1e0001;
-  transition: letter-spacing 0.3s 0s, border-bottom 0.4s 0.3s;
 }
 
 /* -------------------------------- 
