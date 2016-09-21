@@ -79,15 +79,15 @@ jQuery(document).ready(function($){
 		}, delay);
 	});
 
-	// modalTrigger5.on('click', function(event){	
-	// 	event.preventDefault();
-	// 	transitionLayer5.addClass('visible opening');
-	// 	var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
-	// 	$('body').css('overflow','hidden');
-	// 	setTimeout(function(){
-	// 		modalWindow5.addClass('visible');
-	// 	}, delay);
-	// });
+	modalTrigger5.on('click', function(event){	
+		event.preventDefault();
+		transitionLayer5.addClass('visible opening');
+		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
+		$('body').css('overflow','hidden');
+		setTimeout(function(){
+			modalWindow5.addClass('visible');
+		}, delay);
+	});
 
 	//close modal window
 	modalWindow1.on('click', '.modal-close', function(event){
@@ -166,28 +166,6 @@ jQuery(document).ready(function($){
 		resize = false;
 	}
 
-
-
-// Contact Form
-
-
-	// if( $('.floating-labels').length > 0 ) floatLabels();
-
-	// function floatLabels() {
-	// 	var inputFields = $('.floating-labels .cd-label').next();
-	// 	inputFields.each(function(){
-	// 		var singleInput = $(this);
-	// 		//check if user is filling one of the form fields 
-	// 		checkVal(singleInput);
-	// 		singleInput.on('change keyup', function(){
-	// 			checkVal(singleInput);	
-	// 		});
-	// 	});
-	// }
-
-	// function checkVal(inputField) {
-	// 	( inputField.val() == '' ) ? inputField.prev('.cd-label').removeClass('float') : inputField.prev('.cd-label').addClass('float');
-	// }
 
 //Contact Form 2
 
@@ -276,7 +254,7 @@ $(function() {
 
 
 
-});
+// });
 
 //Mouse Movement Home text
 
@@ -311,6 +289,8 @@ $(window).on('mousemove click', function(e) {
 });
 
 moveBackground();
+
+
 
 
 
@@ -362,6 +342,8 @@ function isScrolledIntoView(elem) {
     }
   }
 }
+
+})
 
 
 

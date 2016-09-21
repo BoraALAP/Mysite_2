@@ -506,9 +506,9 @@ Flex Box
 }
 @media only screen and (min-width: 768px) {
   .flexcontainer {
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-flex-flow: row;
         -ms-flex-flow: row;
             flex-flow: row;
@@ -527,7 +527,6 @@ Flex Box
     -webkit-flex: 1 auto;
         -ms-flex: 1 auto;
             flex: 1 auto;
-    width: 30%;
   }
 }
 .smallitem img {
