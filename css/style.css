@@ -1301,28 +1301,38 @@ button {
   background: none;
   border: none;
   outline: none;
-  margin: 2vmax 0;
-  color: #780001;
-  background-color: #FFFFFF;
-  padding: 1rem 4rem;
-  font-size: 1.6rem;
-  box-shadow: 3px 4px 20px #1e0001;
-  font-size: 1.6rem;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 600;
+  margin: 2vmax 0 0 0;
+  width: 60px;
+  height: 60px;
   transition: all 0.15s;
+}
+button svg .st0 {
+  fill: #FFFFFF;
+}
+button svg .st1 {
+  opacity: 0.19;
+  -webkit-clip-path: url(#SVGID_2_);
+          clip-path: url(#SVGID_2_);
+  fill: #780001;
+}
+button svg .st2 {
+  fill: #1e0001;
+}
+button svg .st3 {
+  opacity: 0.19;
+  fill: #ff1e26;
+}
+buttonhover .st0 {
+  fill: transparent;
 }
 button:active {
   -webkit-transform: translateY(2px);
       -ms-transform: translateY(2px);
           transform: translateY(2px);
-  background-color: rgba(255, 255, 255, 0);
-  color: #FFFFFF;
-  box-shadow: 0px 0px 20px rgba(120, 0, 1, 0.5);
 }
 
 legend {
-  margin: 2rem auto 50px auto;
+  margin: 2rem auto 30px auto;
   text-align: center;
   line-height: 3.5rem;
   font-size: 2rem;

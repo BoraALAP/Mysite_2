@@ -1165,35 +1165,51 @@ button {
   background: none;
   border: none;
   outline: none;
-  margin: 2vmax 0;
-  color: $color-1;
-  background-color: $white;
-  padding: 1rem 4rem;
-  font-size: 1.6rem;
-  box-shadow: 3px 4px 20px $color-2;
+  margin: 2vmax 0 0 0;
+  width: 60px;
+  height: 60px;
 
 
-   font: {
-  	size: 1.6rem;
-  	family: $primary-font;
-  	weight: 600;
-  }
+	svg{
+		.st0{
+			fill:$white;
+		}
+		.st1{
+			opacity:0.19;
+			clip-path:url(#SVGID_2_);
+			fill:$color-1;
+		}
+		.st2{
+			fill:$color-2;
+		}
+		.st3{
+			opacity:0.19;
+			fill:lighten($color-2, 50%);
+		}
+	}
 
-  &:active{
-  	transform: translateY(2px);
-  	background-color:rgba($white, 0);
-  	color:$white;
-  	box-shadow: 0px 0px 20px rgba($color-1, 0.5);
-  };
+	&hover{
+		.st0{
+			fill:transparent;
+		}
+		.st1{
+			
+		}
+	}
 
-  @include transition(all .15s);
+	&:active{
+	  	transform: translateY(2px);
+	};
+
+	@include transition(all .15s);
 
 
 }
 
 
+
 legend {
-    margin: 2rem auto 50px auto;
+    margin: 2rem auto 30px auto;
     text-align: center;
     line-height: 3.5rem;
     font:{

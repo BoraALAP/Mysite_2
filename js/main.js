@@ -263,15 +263,15 @@ console.clear();
 
 // smooth scrooling
 
-$(function() {
-				$.scrollify({
-				     section : ".section",
-				     scrollSpeed: 2000,
-				     offset : 0,
-				     sectionName:false,
-				     standardScrollElements:".visible, .webpageslist"
-				});
-			});
+// $(function() {
+// 				$.scrollify({
+// 				     section : ".section",
+// 				     scrollSpeed: 2000,
+// 				     offset : 0,
+// 				     sectionName:false,
+// 				     standardScrollElements:".visible, .webpageslist"
+// 				});
+// 			});
 
 
 
