@@ -424,7 +424,7 @@ Flex Box
     align-items: flex-start;
 
 	@include MQ(M) {
-		display: inline-flex;
+		display: flex;
 		flex-flow: row;
 	}
 
@@ -437,7 +437,7 @@ Flex Box
 
     @include MQ(M) {
 		flex: 1 auto;
-	    width: 30%;
+	    
 	}
 
 	img{
