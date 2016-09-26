@@ -345,11 +345,8 @@ function isScrolledIntoView(elem) {
 
 $(function() {
   var box = $('.sendbutton');
-  box.on('click', function(){
+  box.submit(function(){
     box.addClass('active');
-  });
-  box.on('mouseleave',function() {
-  	box.removeClass('active');
   });
 });
 

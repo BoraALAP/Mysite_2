@@ -23,10 +23,10 @@ $(function () {
                         $('.messages').append(alertBox).toggleClass('active');
                         setTimeout(function(){ 
                             $('.messages').append(alertBox).toggleClass('active');
-                            $('.alert').delay('5000').css('display', 'none');
-                            $('#contact-form').delay('3000').removeClass('nonactive');
+                            $('.alert').delay('8000').css('display', 'none');
+                            $('#contact-form').delay('5000').removeClass('nonactive');
                             $('#contact-form')[0].reset();
-                         }, 7000);
+                         }, 13000);
                         //$('.messages').delay( 1800 ).css('opacity', '0');
                         //$('#contact-form').delay( 1850 ).css('opacity', '1');
                         
