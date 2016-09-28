@@ -143,6 +143,7 @@ canvas{
 
 }
 
+
 @keyframes imageanimation {
     0% {
         transform: translateY(-480px);
@@ -169,10 +170,43 @@ canvas{
 }
 
 
-.skew-content{
-  @include transform(skewY(15deg));
-  color: $white;
-  height: 100%; 
+
+.skew-box_enterence{
+	@include transform(skewX(-10deg));
+
+	height: 100%;
+    width: 70%;
+    left: -20%;
+    position: fixed;
+    float: left;
+}
+
+.particles_enterence{
+	@include transform(skewX(-10deg));
+	@include linearGradient(-45deg, $color-2 ,lighten($color-2,15%));
+	height: 100%!important;
+	width: 70%!important;
+	right: -20%;
+	position: fixed;
+	float: right;
+
+
+}
+
+
+.name_enterence{
+	z-index: 20;
+    position: fixed;
+	h1{
+		font:{
+			size:15rem;
+		};
+	}
+	h4{
+		font:{
+			size:5rem;
+		};
+	}
 }
 
 /* -------------------------------- 

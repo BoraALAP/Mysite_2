@@ -180,14 +180,59 @@ canvas {
   }
 }
 
-.skew-content {
-  -webkit-transform: skewY(15deg);
-  -moz-transform: skewY(15deg);
-  -ms-transform: skewY(15deg);
-  -o-transform: skewY(15deg);
-  transform: skewY(15deg);
-  color: #FFFFFF;
+.skew-box_enterence {
+  -webkit-transform: skewX(-10deg);
+  -moz-transform: skewX(-10deg);
+  -ms-transform: skewX(-10deg);
+  -o-transform: skewX(-10deg);
+  transform: skewX(-10deg);
   height: 100%;
+  width: 70%;
+  left: -20%;
+  position: fixed;
+  float: left;
+}
+
+.particles_enterence {
+  -webkit-transform: skewX(-10deg);
+  -moz-transform: skewX(-10deg);
+  -ms-transform: skewX(-10deg);
+  -o-transform: skewX(-10deg);
+  transform: skewX(-10deg);
+  background: #1e0001;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #1e0001 0%, #6b0004 85%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, -45deg, color-stop(0%, #1e0001), color-stop(85%, #6b0004));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, #1e0001 0%, #6b0004 85%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg, #1e0001 0%, #6b0004 85%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg, #1e0001 0%, #6b0004 85%);
+  /* IE10+ */
+  background: linear-gradient(-45deg, #1e0001 0%, #6b0004 85%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+  height: 100% !important;
+  width: 70% !important;
+  right: -20%;
+  position: fixed;
+  float: right;
+}
+
+.name_enterence {
+  z-index: 20;
+  position: fixed;
+}
+
+.name_enterence h1 {
+  font-size: 15rem;
+}
+
+.name_enterence h4 {
+  font-size: 5rem;
 }
 
 /* -------------------------------- 
