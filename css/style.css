@@ -180,37 +180,6 @@ canvas {
   }
 }
 
-.skew-box_enterence {
-  -webkit-transform: skewX(-10deg);
-  -moz-transform: skewX(-10deg);
-  -ms-transform: skewX(-10deg);
-  -o-transform: skewX(-10deg);
-  transform: skewX(-10deg);
-  background: #1e0001;
-  /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, -45deg, color-stop(0%, #1e0001), color-stop(85%, #c50002));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
-  /* IE10+ */
-  background: linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
-  /* IE6-9 */
-  height: 100%;
-  width: 70%;
-  left: -20%;
-  position: fixed;
-  float: left;
-  background-size: 500% 500%;
-  animation: Gradient 10s ease infinite;
-}
-
 @keyframes Gradient {
   0% {
     background-position: 0% 50%;
@@ -223,12 +192,84 @@ canvas {
   }
 }
 
-.particles_enterence {
+.common_enterence {
   -webkit-transform: skewX(-10deg);
   -moz-transform: skewX(-10deg);
   -ms-transform: skewX(-10deg);
   -o-transform: skewX(-10deg);
   transform: skewX(-10deg);
+  height: 100% !important;
+  width: 70% !important;
+  position: fixed;
+  -webkit-transition: width, 10s, 0.5s, ease;
+  -moz-transition: width, 10s, 0.5s, ease;
+  transition: width, 10s, 0.5s, ease;
+  z-index: 30;
+}
+
+.common_enterence .titletext {
+  top: 70vh;
+  position: relative;
+  pointer-events: none;
+  margin: auto;
+  width: 50%;
+  -webkit-transform: skewX(10deg);
+  -moz-transform: skewX(10deg);
+  -ms-transform: skewX(10deg);
+  -o-transform: skewX(10deg);
+  transform: skewX(10deg);
+}
+
+.common_enterence .titletext h5 {
+  -webkit-transition: all, 2s, ease;
+  -moz-transition: all, 2s, ease;
+  transition: all, 2s, ease;
+  text-align: center;
+  mix-blend-mode: overlay;
+  color: #780001;
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.common_enterence:hover {
+  width: 90% !important;
+  z-index: 35 !important;
+}
+
+.common_enterence:hover .titletext h5 {
+  color: #FFFFFF;
+  mix-blend-mode: normal;
+  font-size: 4.2rem;
+}
+
+.skew-box_enterence {
+  background: #ff9b9b;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ff9b9b 0%, #840003 85%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, -45deg, color-stop(0%, #ff9b9b), color-stop(85%, #840003));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, #ff9b9b 0%, #840003 85%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg, #ff9b9b 0%, #840003 85%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg, #ff9b9b 0%, #840003 85%);
+  /* IE10+ */
+  background: linear-gradient(-45deg, #ff9b9b 0%, #840003 85%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+  left: -20%;
+  float: left;
+  background-size: 500% 500%;
+  animation: Gradient 10s ease infinite;
+}
+
+.skew-box_enterence .titletext {
+  right: -10%;
+}
+
+.particles_enterence {
   background: #1e0001;
   /* Old browsers */
   background: -moz-linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
@@ -245,13 +286,14 @@ canvas {
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
   /* IE6-9 */
-  height: 100% !important;
-  width: 70% !important;
   right: -20%;
-  position: fixed;
   float: right;
   background-size: 200% 200% !important;
   animation: Gradient 20s ease infinite;
+}
+
+.particles_enterence .titletext {
+  left: -10%;
 }
 
 .name_enterence {
@@ -260,8 +302,9 @@ canvas {
   text-align: center;
   margin: auto;
   mix-blend-mode: overlay;
-  top: 35%;
+  top: 20%;
   width: 100%;
+  pointer-events: none;
 }
 
 .name_enterence span {
@@ -515,7 +558,7 @@ Typography
 -------------------------------- */
 h1 {
   font-size: 4rem;
-  font-weight: 400;
+  font-weight: 700;
   font-family: "Mukta Vaani", sans-serif;
   font-style: normal;
   margin-bottom: 1.25rem;
