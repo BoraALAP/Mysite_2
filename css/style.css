@@ -186,11 +186,41 @@ canvas {
   -ms-transform: skewX(-10deg);
   -o-transform: skewX(-10deg);
   transform: skewX(-10deg);
+  background: #1e0001;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, -45deg, color-stop(0%, #1e0001), color-stop(85%, #c50002));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
+  /* IE10+ */
+  background: linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
   height: 100%;
   width: 70%;
   left: -20%;
   position: fixed;
   float: left;
+  background-size: 500% 500%;
+  animation: Gradient 10s ease infinite;
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .particles_enterence {
@@ -201,17 +231,17 @@ canvas {
   transform: skewX(-10deg);
   background: #1e0001;
   /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #1e0001 0%, #6b0004 85%);
+  background: -moz-linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, -45deg, color-stop(0%, #1e0001), color-stop(85%, #6b0004));
+  background: -webkit-gradient(linear, -45deg, color-stop(0%, #1e0001), color-stop(85%, #c50002));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg, #1e0001 0%, #6b0004 85%);
+  background: -webkit-linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg, #1e0001 0%, #6b0004 85%);
+  background: -o-linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg, #1e0001 0%, #6b0004 85%);
+  background: -ms-linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
   /* IE10+ */
-  background: linear-gradient(-45deg, #1e0001 0%, #6b0004 85%);
+  background: linear-gradient(-45deg, #1e0001 0%, #c50002 85%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
   /* IE6-9 */
@@ -220,18 +250,30 @@ canvas {
   right: -20%;
   position: fixed;
   float: right;
+  background-size: 200% 200% !important;
+  animation: Gradient 20s ease infinite;
 }
 
 .name_enterence {
-  z-index: 20;
+  z-index: 40;
   position: fixed;
+  text-align: center;
+  margin: auto;
+  mix-blend-mode: overlay;
+  top: 35%;
+}
+
+.name_enterence span {
+  color: #543838;
 }
 
 .name_enterence h1 {
+  color: #FFFFFF;
   font-size: 15rem;
 }
 
 .name_enterence h4 {
+  color: #fff;
   font-size: 5rem;
 }
 

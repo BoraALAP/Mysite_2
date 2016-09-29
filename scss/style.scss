@@ -173,38 +173,57 @@ canvas{
 
 .skew-box_enterence{
 	@include transform(skewX(-10deg));
-
+	@include linearGradient(-45deg, $color-2 ,lighten($color-1,15%));
 	height: 100%;
     width: 70%;
     left: -20%;
     position: fixed;
     float: left;
+    background-size: 500% 500%;
+    animation: Gradient 10s ease infinite;
+}
+
+@keyframes Gradient { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
 .particles_enterence{
 	@include transform(skewX(-10deg));
-	@include linearGradient(-45deg, $color-2 ,lighten($color-2,15%));
+	@include linearGradient(-45deg, $color-2 ,lighten($color-1,15%));
 	height: 100%!important;
 	width: 70%!important;
 	right: -20%;
 	position: fixed;
 	float: right;
-
-
+	background-size: 200% 200% !important;
+    animation: Gradient 20s ease infinite;
 }
 
 
 .name_enterence{
-	z-index: 20;
+	z-index: 40;
     position: fixed;
+    text-align: center; 
+    margin: auto;
+    mix-blend-mode: overlay;
+    top: 35%;
+    span{
+    	color:#543838;
+    }
 	h1{
+		color:$white;
 		font:{
 			size:15rem;
+			
 		};
 	}
 	h4{
+		color:#fff;
 		font:{
 			size:5rem;
+			
 		};
 	}
 }
