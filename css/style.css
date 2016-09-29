@@ -261,6 +261,7 @@ canvas {
   margin: auto;
   mix-blend-mode: overlay;
   top: 35%;
+  width: 100%;
 }
 
 .name_enterence span {

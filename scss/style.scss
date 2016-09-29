@@ -141,6 +141,7 @@ canvas{
   overflow: hidden;
   z-index: 10;
 
+
 }
 
 
@@ -173,7 +174,7 @@ canvas{
 
 .skew-box_enterence{
 	@include transform(skewX(-10deg));
-	@include linearGradient(-45deg, $color-2 ,lighten($color-1,15%));
+	@include linearGradient(-45deg, #ff9b9b 0%, #840003 15%));
 	height: 100%;
     width: 70%;
     left: -20%;
@@ -181,6 +182,10 @@ canvas{
     float: left;
     background-size: 500% 500%;
     animation: Gradient 10s ease infinite;
+    
+    &:hover{
+    	width: 90%;
+    };
 }
 
 @keyframes Gradient { 
@@ -209,6 +214,7 @@ canvas{
     margin: auto;
     mix-blend-mode: overlay;
     top: 35%;
+    width: 100%;
     span{
     	color:#543838;
     }
