@@ -1,4 +1,4 @@
-@import "bourbon/bourbon"; // http://bourbon.io/
+@import 'bourbon'; // http://bourbon.io/
 
 @import '../partials/variables'; // colors, fonts etc...
 
@@ -13,20 +13,19 @@ Primary style
 -------------------------------- */
 
 
-
 *, *::after, *::before {
 	box-sizing: border-box; 
 }
 
 html { 
 	font-size: 62.5%;
-	@include scrollbars(1rem, $color-1); 
+	@include scrollbars(1rem, $color-1);  
 }
 
 body {
 	font: {
 		size: 1.6rem;
-		family: $primary-font; // variables inside partials > _variables.scss
+		family: $primary-font;
 	}
 	color: $color-1;
 	background-color: $color-3;
@@ -42,7 +41,6 @@ a {
 	color: $color-2;
 	text-decoration: none;
 }
-
 
 canvas{
   display:block;
@@ -62,39 +60,37 @@ canvas{
 -------------------------------- */
 
 .jumbotron{
-  height:100%;
-  margin-bottom: 0;
+	height:100%;
+	margin-bottom: 0;
 
-  @include linearGradient(-45deg, $color-2 ,lighten($color-2,15%));
+	@include linearGradient(-45deg, $color-2 ,lighten($color-2,15%));
 
-  & img{
-    position: fixed;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-    width: 100%;
-    animation-name:imageanimation;
-    animation-iteration-count: infinite;
-    animation-duration: 180s;
-    animation-timing-function: cubic-bezier(0, 0, 1, 1);
-    mix-blend-mode: overlay;
-
-}
-
+	& img{
+		position: fixed;
+		left: 0;
+		top: 0;
+		opacity: 0;
+		box-sizing: border-box;
+		overflow: hidden;
+		width: 100%;
+		animation-name:imageanimation;
+		animation-iteration-count: infinite;
+		animation-duration: 180s;
+		animation-timing-function: cubic-bezier(0, 0, 1, 1);
+		mix-blend-mode: overlay;
+	}
 }
 
 .jumbotron-text{
+
 	padding-left: 10%;
 	position: absolute;
 	bottom: 10%;
 	z-index:15;
 
 	@include MQ(M) {
-  	bottom:0%;
-  }
-
+  		bottom:0%;
+  	}
 }
 
 .jumbotron h1{
@@ -105,7 +101,6 @@ canvas{
   	animation-delay: 0.75s;
   	animation-timing-function: cubic-bezier(0, 0, 1, 1);
   	animation-fill-mode: forwards;
-  	
 }
 
 .jumbotron h4{
@@ -115,7 +110,6 @@ canvas{
   	animation-delay: 3s;
   	animation-timing-function: cubic-bezier(0, 0, 1, 1);
   	animation-fill-mode: forwards;
-  	
 }
 
 #particles-js{
@@ -127,23 +121,23 @@ canvas{
 	background-repeat: no-repeat;
 }
 
-
-
 .skew-box{
-  @include transform(skewY(-15deg));
-  background-size: cover;
-  background-color: $white;
-  height:100%;
-  width: 100%;
-  position: fixed;
-  bottom: 50%;
-  @include backface-visibility(hidden);
-  overflow: hidden;
-  z-index: 10;
-
-
+	@include transform(skewY(-15deg));
+	background-size: cover;
+	background-color: $white;
+	height:100%;
+	width: 100%;
+	position: fixed;
+	bottom: 50%;
+	@include backface-visibility(hidden);
+	overflow: hidden;
+	z-index: 10;
 }
 
+.skew-content{
+	@include transform(skewY(15deg));
+	height: 100%
+}
 
 @keyframes imageanimation {
     0% {
@@ -171,9 +165,15 @@ canvas{
 }
 
 @keyframes Gradient { 
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0%{
+    	background-position:0% 50%
+    }
+    50%{
+    	background-position:100% 50%
+    }
+    100%{
+    	background-position:0% 50%
+    }
 }
 
 .common_enterence{
@@ -195,15 +195,14 @@ canvas{
    			@include transition(all, 2s, ease);
    			text-align: center;
    			mix-blend-mode: overlay;
-   			color: $color-1;
+   			color: lighten($color-1, 10%);
    			font:{
-   				size: 2rem;	
+   				size: 1.5rem;	
    				weight: 300;
-
-   				@include MQ(M) {
-					size:4rem;
-				}
    			}
+   			@include MQ(M) {
+					font-size:3rem;
+				}
    		}
 	}
 	&:hover{
@@ -214,11 +213,11 @@ canvas{
     			color:$white;
     			mix-blend-mode: normal;
     			font:{
-    				size:4.2rem;
+    				size:3.25rem;
     			}
     		}
     	}
-    };
+    }
 }
 
 .skew-box_enterence{
@@ -254,46 +253,35 @@ canvas{
     left:0;
     right: 0;
     pointer-events: none;
-    mix-blend-mode: lighten;
+    mix-blend-mode: hard-light;
     background-color: rgba($white, 0.8);
     padding: 50px;
-
-    @include boxShadow(lighten($color-2, 10%), 2px);
-	@include transition(box-shadow 0.6s);
-
+    @include boxShadow($color-2, 2px);
 	@include MQ(M) {
 			top: 15%;
 		}	
-
 	h1{
-		
 		font:{
 			size:5rem;	 
-		};
+		}
 		@include MQ(M) {
-			font-size: 15rem; 
+			font-size: 15rem;  
 		}	
 	}
 	h4{
-		
 		font:{
-			size:2rem;
-		};
+			size:2rem; 
+		}
 		@include MQ(M) {
 			font-size: 5rem;   
 		}
-	}
-
-	
+	}	
 }
 
 .text-color{
     @include linearGradient(-45deg, $color-2 ,lighten($color-1,15%));
     -webkit-background-clip: text;
     background-size: 200% 200% !important;
-    color: #000;
-
-
 }
 
 /* -------------------------------- 
