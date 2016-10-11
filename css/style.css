@@ -65,60 +65,6 @@ canvas {
 
 /* -------------------------------- 
 
-	Page Transition 
-
--------------------------------- */
-@-webkit-keyframes overlay-slide-in-right {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 0;
-  }
-}
-@keyframes overlay-slide-in-right {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 0;
-  }
-}
-
-.overlay-slide-in-right {
-  right: 0;
-  width: 0;
-  -webkit-animation-name: overlay-slide-in-right;
-          animation-name: overlay-slide-in-right;
-}
-
-@-webkit-keyframes overlay-slide-out-right {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes overlay-slide-out-right {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-.overlay-slide-out-right {
-  right: 0;
-  width: 100%;
-  -webkit-animation-name: overlay-slide-out-right;
-          animation-name: overlay-slide-out-right;
-}
-
-/* -------------------------------- 
-
   Enterence
 
 -------------------------------- */
@@ -337,7 +283,7 @@ canvas {
   transition: all, 2s, ease;
   text-align: center;
   mix-blend-mode: overlay;
-  color: #ab0001;
+  color: #FFFFFF;
   font-size: 1.5rem;
   font-weight: 300;
 }
@@ -345,6 +291,7 @@ canvas {
 @media only screen and (min-width: 768px) {
   .common_enterence .titletext h5 {
     font-size: 3rem;
+    color: #ab0001;
   }
 }
 

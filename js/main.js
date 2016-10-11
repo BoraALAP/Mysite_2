@@ -39,25 +39,25 @@ jQuery(document).ready(function($){
 	});
 
 	//open modal window
-	modalTrigger1.on('click', function(event){	
-		event.preventDefault();
-		transitionLayer1.addClass('visible opening');
-		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
-		$('body').css('overflow','hidden');
-		setTimeout(function(){
-			modalWindow1.addClass('visible');
-		}, delay);
-	});
+	// modalTrigger1.on('click', function(event){	
+	// 	event.preventDefault();
+	// 	transitionLayer1.addClass('visible opening');
+	// 	var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
+	// 	$('body').css('overflow','hidden');
+	// 	setTimeout(function(){
+	// 		modalWindow1.addClass('visible');
+	// 	}, delay);
+	// });
 
-	modalTrigger2.on('click', function(event){	
-		event.preventDefault();
-		transitionLayer2.addClass('visible opening');
-		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
-		$('body').css('overflow','hidden');
-		setTimeout(function(){
-			modalWindow2.addClass('visible');
-		}, delay);
-	});
+	// modalTrigger2.on('click', function(event){	
+	// 	event.preventDefault();
+	// 	transitionLayer2.addClass('visible opening');
+	// 	var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
+	// 	$('body').css('overflow','hidden');
+	// 	setTimeout(function(){
+	// 		modalWindow2.addClass('visible');
+	// 	}, delay);
+	// });
 
 	modalTrigger3.on('click', function(event){	
 		event.preventDefault();

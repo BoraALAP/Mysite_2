@@ -54,44 +54,6 @@ canvas{
 	background-color: $color-1;
 }
 
-/* -------------------------------- 
-
-	Page Transition 
-
--------------------------------- */
-
-@keyframes overlay-slide-in-right {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 0;
-  }
-}
-
-
-.overlay-slide-in-right {
-  right: 0;
-  width: 0;
-  animation-name: overlay-slide-in-right;
-}
-
-
-@keyframes overlay-slide-out-right {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-
-.overlay-slide-out-right {
-  right: 0;
-  width: 100%;
-  animation-name: overlay-slide-out-right;
-}
 
 /* -------------------------------- 
 
@@ -237,13 +199,14 @@ canvas{
    			@include transition(all, 2s, ease);
    			text-align: center;
    			mix-blend-mode: overlay;
-   			color: lighten($color-1, 10%);
+   			color: $white;
    			font:{
    				size: 1.5rem;	
    				weight: 300;
    			}
    			@include MQ(M) {
 					font-size:3rem;
+					color: lighten($color-1, 10%);
 				}
    		}
 	}
