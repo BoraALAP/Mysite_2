@@ -29,6 +29,7 @@ body {
 	}
 	color: $color-1;
 	background-color: $color-3;
+	@include font-smoothing;
 
 }
 
