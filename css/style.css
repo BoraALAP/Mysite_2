@@ -610,19 +610,27 @@ Patterns - reusable parts of our design
 }
 
 .cd-btn h5 {
-  opacity: 0;
-  transition: all 2s;
-  -webkit-transform: translateX(75px);
-      -ms-transform: translateX(75px);
-          transform: translateX(75px);
-  color: #FFFFFF;
+  opacity: 1;
 }
 
-.cd-btn:hover h5 {
-  opacity: 1;
-  -webkit-transform: translateX(0px);
-      -ms-transform: translateX(0px);
-          transform: translateX(0px);
+@media only screen and (min-width: 768px) {
+  .cd-btn h5 {
+    opacity: 0;
+    transition: all 2s;
+    -webkit-transform: translateX(75px);
+        -ms-transform: translateX(75px);
+            transform: translateX(75px);
+    color: #FFFFFF;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-btn:hover h5 {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+            transform: translateX(0px);
+  }
 }
 
 .cd-btn-logo {
@@ -1157,9 +1165,9 @@ Bottom
           flex: 1;
   max-height: 150px;
   /*@include linearGradient(45deg, #f2f2f2,#dddddd);*/
-  -webkit-justify-content: flex-end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1193,6 +1201,9 @@ Bottom
 @media only screen and (min-width: 768px) {
   .headline {
     padding: 5rem;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 

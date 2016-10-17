@@ -433,15 +433,20 @@ Patterns - reusable parts of our design
     }
 
     h5{
-    	opacity: 0;
-    	@include transition(all 2s);
-    	transform: translateX(75px);
-    	color: $white;
+    	opacity: 1;
+    	@include MQ(M) {
+	    	opacity: 0;
+	    	@include transition(all 2s);
+	    	transform: translateX(75px);
+	    	color: $white;
+	    }
     }
 
     &:hover h5{
-    	opacity: 1;
-    	transform: translateX(0px);
+    	@include MQ(M) {
+	    	opacity: 1;
+	    	transform: translateX(0px);
+	    }
     }
 
     
@@ -970,7 +975,7 @@ Bottom
 	flex: 1;
 	max-height: 150px;
     /*@include linearGradient(45deg, #f2f2f2,#dddddd);*/
-    justify-content: flex-end;
+    justify-content: flex-start;
 	align-items: center;
 	padding: 2rem;
 
@@ -1002,6 +1007,7 @@ Bottom
 
     @include MQ(M) {
   			padding: 5rem;
+  			justify-content: flex-end;
   		}
 
 }
