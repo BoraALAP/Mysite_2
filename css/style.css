@@ -384,12 +384,12 @@ canvas {
   }
 }
 
-.name_enterence h4 {
+.name_enterence h2 {
   font-size: 2rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .name_enterence h4 {
+  .name_enterence h2 {
     font-size: 5rem;
   }
 }
