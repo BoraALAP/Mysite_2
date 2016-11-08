@@ -446,7 +446,7 @@ Patterns - reusable parts of our design
   box-shadow: 0 0px 30px rgba(0, 0, 0, 0.6);
 }
 
-.cd-btn:nth-of-type(1) {
+.cd-btn:nth-of-type(2) {
   /*background-image: url(../img/img-1.jpg);*/
   background: #980058;
   /* Old browsers */
@@ -461,7 +461,7 @@ Patterns - reusable parts of our design
   /* IE6-9 */
 }
 
-.cd-btn:nth-of-type(1):before {
+.cd-btn:nth-of-type(2):before {
   background-image: url(../img/logo/tsa_logo.svg);
   content: " ";
   width: 200px;
@@ -476,7 +476,7 @@ Patterns - reusable parts of our design
           animation: titleopacity 2s 3.5s cubic-bezier(0, 0, 1, 1) forwards;
 }
 
-.cd-btn:nth-of-type(2) {
+.cd-btn:nth-of-type(5) {
   /*background-image: url(../img/img-2.jpg);*/
   background: #3B6E98;
   /* Old browsers */
@@ -491,7 +491,7 @@ Patterns - reusable parts of our design
   /* IE6-9 */
 }
 
-.cd-btn:nth-of-type(2):before {
+.cd-btn:nth-of-type(5):before {
   background-image: url(../img/logo/meridian_logo_rev.svg);
   content: " ";
   width: 200px;
@@ -570,7 +570,7 @@ Patterns - reusable parts of our design
   color: #6a6a6a;
 }
 
-.cd-btn:nth-of-type(5) {
+.cd-btn:nth-of-type(1) {
   /*background-image: url(../img/img-2.jpg);*/
   background: #022337;
   /* Old browsers */
@@ -586,7 +586,7 @@ Patterns - reusable parts of our design
   cursor: default;
 }
 
-.cd-btn:nth-of-type(5):before {
+.cd-btn:nth-of-type(1):before {
   background-image: url(../img/logo/promescent.svg);
   content: " ";
   width: 200px;
@@ -1071,6 +1071,7 @@ Modal window
   text-align: center;
   opacity: 0;
   margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
 .modal-content p {

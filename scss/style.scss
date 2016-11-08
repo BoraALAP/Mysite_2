@@ -325,7 +325,7 @@ Patterns - reusable parts of our design
 
 
 
-	&:nth-of-type(1){
+	&:nth-of-type(2){
     	/*background-image: url(../img/img-1.jpg);*/
     	@include linearGradient(33deg, darken(#CB0076, 10%), #CB0076); 
 	    	
@@ -344,7 +344,7 @@ Patterns - reusable parts of our design
 	    }
     }
 
-    &:nth-of-type(2){
+    &:nth-of-type(5){
 		/*background-image: url(../img/img-2.jpg);*/
     	@include linearGradient(33deg, #3B6E98, darken(#3B6E98, 20%));
 
@@ -404,7 +404,7 @@ Patterns - reusable parts of our design
 	    }
     }
 
-    &:nth-of-type(5){
+    &:nth-of-type(1){
 		/*background-image: url(../img/img-2.jpg);*/
     	@include linearGradient(33deg, #022337, #1f0746);
     	cursor: default;
@@ -902,6 +902,9 @@ Modal window
 			text-align: center;
 			opacity: 0;
 			margin-bottom: 2rem;
+			font:{
+				size: 2rem;
+			}
 		}
 
 		p {
