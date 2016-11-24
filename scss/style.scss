@@ -207,7 +207,7 @@ canvas{
 	height: 100%!important;
 	width: 70%!important;
 	position: fixed;
-    @include transition(width, 10s, 0.5s, ease);
+    @include transition(all, 10s, 0.5s, ease);
     z-index: 30;
 
     .titletext{
@@ -237,6 +237,7 @@ canvas{
 	&:hover{
     	/*width: 90%!important;*/
     	z-index: 35!important;
+    	
     	.titletext{
     		h5{
     			mix-blend-mode: normal;
@@ -256,6 +257,10 @@ canvas{
     background-size: 500% 500%;
     animation: Gradient 10s ease infinite;
     mix-blend-mode: overlay;
+    @include transition(all, 2s, ease);
+    &:hover{
+    	mix-blend-mode: lighten;
+    };
    	.titletext{
     	right: -10%;
     }
@@ -269,6 +274,10 @@ canvas{
 	background-size: 200% 200% !important;
     animation: Gradient 20s ease infinite;
     mix-blend-mode: overlay;
+    @include transition(all, 2s, ease);
+    &:hover{
+    	mix-blend-mode: lighten;
+    };
     .titletext{
     	left: -10%;
     }

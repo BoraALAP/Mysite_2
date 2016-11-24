@@ -287,7 +287,7 @@ canvas {
   height: 100% !important;
   width: 70% !important;
   position: fixed;
-  transition: width, 10s, 0.5s, ease;
+  transition: all, 10s, 0.5s, ease;
   z-index: 30;
 }
 
@@ -352,6 +352,11 @@ canvas {
   -webkit-animation: Gradient 10s ease infinite;
           animation: Gradient 10s ease infinite;
   mix-blend-mode: overlay;
+  transition: all, 2s, ease;
+}
+
+.skew-box_enterence:hover {
+  mix-blend-mode: lighten;
 }
 
 .skew-box_enterence .titletext {
@@ -376,6 +381,11 @@ canvas {
   -webkit-animation: Gradient 20s ease infinite;
           animation: Gradient 20s ease infinite;
   mix-blend-mode: overlay;
+  transition: all, 2s, ease;
+}
+
+.particles_enterence:hover {
+  mix-blend-mode: lighten;
 }
 
 .particles_enterence .titletext {
