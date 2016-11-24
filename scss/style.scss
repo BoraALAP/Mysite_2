@@ -234,6 +234,17 @@ canvas{
    	.titletext{
     	right: -10%;
     }
+
+   
+
+    video{
+    	position: absolute;
+	    height: 100vh;
+	    left: 0%;
+	    filter: grayscale(100%);
+	    opacity: 0.2;
+
+    }
 }
 
 .particles_enterence{

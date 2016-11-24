@@ -329,6 +329,15 @@ canvas {
   right: -10%;
 }
 
+.skew-box_enterence video {
+  position: absolute;
+  height: 100vh;
+  left: 0%;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  opacity: 0.2;
+}
+
 .particles_enterence {
   background: #1e0001;
   /* Old browsers */
