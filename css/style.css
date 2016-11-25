@@ -101,6 +101,15 @@ canvas {
   -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
           animation-timing-function: cubic-bezier(0, 0, 1, 1);
   mix-blend-mode: overlay;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.website_header img {
+  -webkit-animation-name: imageanimation_web;
+          animation-name: imageanimation_web;
+  -webkit-animation-duration: 100s;
+          animation-duration: 100s;
 }
 
 .jumbotron-text {
@@ -206,6 +215,36 @@ canvas {
   }
 }
 
+@-webkit-keyframes imageanimation_web {
+  0% {
+    -webkit-transform: translateY(-480px);
+            transform: translateY(-480px);
+    opacity: 0;
+  }
+  2% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateY(-4500px);
+            transform: translateY(-4500px);
+  }
+}
+
+@keyframes imageanimation_web {
+  0% {
+    -webkit-transform: translateY(-480px);
+            transform: translateY(-480px);
+    opacity: 0;
+  }
+  2% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateY(-4500px);
+            transform: translateY(-4500px);
+  }
+}
+
 @-webkit-keyframes titleopacity {
   0% {
     opacity: 0;
@@ -267,6 +306,7 @@ canvas {
   height: 100vh;
   overflow: hidden;
   z-index: 1;
+  background: url(../img/video_bg.jpg) no-repeat center center;
 }
 
 .video_container video {
@@ -278,6 +318,13 @@ canvas {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .video_container video {
+    display: block;
+  }
 }
 
 .common_enterence {
@@ -307,16 +354,22 @@ canvas {
   text-align: center;
   /*mix-blend-mode: overlay;*/
   color: #FFFFFF;
-  width: 50%;
   margin: auto;
-  padding: 30px 30px;
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   font-weight: 700;
 }
 
 @media only screen and (min-width: 768px) {
   .common_enterence .titletext h5 {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .common_enterence .titletext h5 {
     font-size: 3rem;
+    padding: 30px 30px;
+    width: 80%;
   }
 }
 
@@ -335,14 +388,14 @@ canvas {
 }
 
 .skew-box_enterence {
-  background: #450001;
+  background: #200007;
   /* Old browsers */
   /* FF3.6+ */
   /* Chrome,Safari4+ */
   /* Chrome10+,Safari5.1+ */
   /* Opera 11.10+ */
   /* IE10+ */
-  background: linear-gradient(-45deg, #450001 0%, #840004 85%);
+  background: linear-gradient(-45deg, #200007 0%, #d5383e 85%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
   /* IE6-9 */
@@ -351,27 +404,39 @@ canvas {
   background-size: 500% 500%;
   -webkit-animation: Gradient 10s ease infinite;
           animation: Gradient 10s ease infinite;
-  mix-blend-mode: overlay;
+  mix-blend-mode: screen;
   transition: all, 2s, ease;
 }
 
+@media only screen and (min-width: 768px) {
+  .skew-box_enterence {
+    mix-blend-mode: overlay;
+  }
+}
+
 .skew-box_enterence:hover {
-  mix-blend-mode: lighten;
+  mix-blend-mode: screen;
 }
 
 .skew-box_enterence .titletext {
-  right: -10%;
+  right: -15%;
+}
+
+@media only screen and (min-width: 768px) {
+  .skew-box_enterence .titletext {
+    right: -10%;
+  }
 }
 
 .particles_enterence {
-  background: #00416D;
+  background: #701722;
   /* Old browsers */
   /* FF3.6+ */
   /* Chrome,Safari4+ */
   /* Chrome10+,Safari5.1+ */
   /* Opera 11.10+ */
   /* IE10+ */
-  background: linear-gradient(-45deg, #00416D 0%, #99d8f7 85%);
+  background: linear-gradient(-45deg, #701722 0%, #c92a30 85%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
   /* IE6-9 */
@@ -380,12 +445,18 @@ canvas {
   background-size: 200% 200% !important;
   -webkit-animation: Gradient 20s ease infinite;
           animation: Gradient 20s ease infinite;
-  mix-blend-mode: overlay;
+  mix-blend-mode: hard-light;
   transition: all, 2s, ease;
 }
 
+@media only screen and (min-width: 768px) {
+  .particles_enterence {
+    mix-blend-mode: overlay;
+  }
+}
+
 .particles_enterence:hover {
-  mix-blend-mode: lighten;
+  mix-blend-mode: hard-light;
 }
 
 .particles_enterence .titletext {
@@ -402,7 +473,7 @@ canvas {
   left: 0;
   right: 0;
   pointer-events: none;
-  mix-blend-mode: overlay;
+  mix-blend-mode: normal;
   /*background-color: rgba($white, 0.8);*/
   padding: 50px;
   /*@include boxShadow($color-2, 2px);*/
@@ -410,18 +481,40 @@ canvas {
 
 @media only screen and (min-width: 768px) {
   .name_enterence {
-    top: 35%;
+    top: 10%;
+    mix-blend-mode: overlay;
   }
 }
 
 .name_enterence h1 {
   color: #FFFFFF;
+  text-transform: uppercase;
   font-size: 5rem;
+}
+
+.name_enterence h1 span:nth-of-type(1) {
+  letter-spacing: 1px;
+}
+
+@media only screen and (min-width: 768px) {
+  .name_enterence h1 span:nth-of-type(1) {
+    letter-spacing: 1px;
+  }
+}
+
+.name_enterence h1 span:nth-of-type(2) {
+  letter-spacing: 4px;
+}
+
+@media only screen and (min-width: 768px) {
+  .name_enterence h1 span:nth-of-type(2) {
+    letter-spacing: 1px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .name_enterence h1 {
-    font-size: 15rem;
+    font-size: 9rem;
   }
 }
 

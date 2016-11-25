@@ -82,6 +82,16 @@ canvas{
 		animation-duration: 180s;
 		animation-timing-function: cubic-bezier(0, 0, 1, 1);
 		mix-blend-mode: overlay;
+		filter: grayscale(100%);
+	}
+}
+
+.website_header{
+
+	& img{
+		animation-name:imageanimation_web;
+		animation-duration: 100s;
+
 	}
 }
 
@@ -158,6 +168,19 @@ canvas{
 }
 
 
+@keyframes imageanimation_web {
+    0% {
+        transform: translateY(-480px);
+        opacity: 0;
+    }
+    2% {
+    	opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-4500px);
+    }
+}
+
 @keyframes titleopacity {
     0% {
         opacity: 0;
@@ -191,7 +214,7 @@ canvas{
     height: 100vh;
     overflow: hidden;
     z-index: 1;
-
+    background: url(../img/video_bg.jpg) no-repeat center center;
 	video{
 		min-width: 100%;
 	    min-height: 100%;
@@ -199,6 +222,10 @@ canvas{
 	    left: 50%;
 	    top: 50%;
 	    transform: translate(-50%, -50%);
+	    display: none;
+	    @include MQ(M) {
+				display: block;
+			}
 	}
 }
 
@@ -209,6 +236,8 @@ canvas{
 	position: fixed;
     @include transition(all, 10s, 0.5s, ease);
     z-index: 30;
+
+
 
     .titletext{
     	top: 70vh;
@@ -222,16 +251,22 @@ canvas{
    			text-align: center;
    			/*mix-blend-mode: overlay;*/
    			color: $white;
-   			width: 50%;
    			margin: auto;
-   			padding: 30px 30px;
+   			
    			font:{
-   				size: 1.5rem;	
+   				size: 1.9rem;	
    				weight: 700;
    			}
    			@include MQ(M) {
-				font-size:3rem;
+				font-size:2.5rem;
+
 			}
+   			@include MQ(L) {
+				font-size:3rem;
+				padding: 30px 30px;
+				width: 80%;
+			}
+			
    		}
 	}
 	&:hover{
@@ -251,35 +286,47 @@ canvas{
 }
 
 .skew-box_enterence{
-	@include linearGradient(-45deg, darken($color-1,10%), lighten($color-2,20%));
+	@include linearGradient(-45deg, darken($firstcolor-1,10%), lighten($firstcolor-2,20%));
     left: -20%;
     float: left;
     background-size: 500% 500%;
     animation: Gradient 10s ease infinite;
-    mix-blend-mode: overlay;
+   	mix-blend-mode: screen;
     @include transition(all, 2s, ease);
+
+     @include MQ(M) {
+			mix-blend-mode: overlay;
+		}	
     &:hover{
-    	mix-blend-mode: lighten;
+    	mix-blend-mode: screen;
     };
    	.titletext{
-    	right: -10%;
+    	right: -15%;
+    	@include MQ(M) {
+			right: -10%;
+		}
     }
 
 }
 
 .particles_enterence{
-	@include linearGradient(-45deg, $secondarycolor-2 ,lighten($secondarycolor-1,15%));
+	@include linearGradient(-45deg, $secondcolor-2 ,lighten($secondcolor-1,15%));
 	right: -20%;
 	float: right;
 	background-size: 200% 200% !important;
     animation: Gradient 20s ease infinite;
-    mix-blend-mode: overlay;
+    mix-blend-mode: hard-light;
     @include transition(all, 2s, ease);
+    @include MQ(M) {
+			mix-blend-mode: overlay;
+		}	
+
     &:hover{
-    	mix-blend-mode: lighten;
+    	mix-blend-mode: hard-light;
     };
     .titletext{
     	left: -10%;
+
     }
 }
 
@@ -294,20 +341,36 @@ canvas{
     left:0;
     right: 0;
     pointer-events: none;
-    mix-blend-mode: overlay;
+    mix-blend-mode: normal;
     /*background-color: rgba($white, 0.8);*/
     padding: 50px;
     /*@include boxShadow($color-2, 2px);*/
 	@include MQ(M) {
-			top: 35%;
+			top: 10%;
+			mix-blend-mode: overlay;
 		}	
 	h1{
 		color: $white;
+		text-transform: uppercase;
+		span:nth-of-type(1){
+			letter-spacing: 1px;
+			@include MQ(M) {
+			letter-spacing: 1px; 
+		}
+		}
+
+		span:nth-of-type(2){
+			letter-spacing: 4px;
+			@include MQ(M) {
+			letter-spacing: 1px;
+		}
+		}
+
 		font:{
 			size:5rem;	 
 		}
 		@include MQ(M) {
-			font-size: 15rem;  
+			font-size: 9rem;  
 		}	
 	}
 	h2{
