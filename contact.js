@@ -22,7 +22,7 @@ $(function () {
             
                         $('.messages').append(alertBox).toggleClass('active');
                         setTimeout(function(){ 
-                            $('.messages').append(alertBox).toggleClass('active');
+                            $('.messages').append(alertBox).toggleClass('active'); 
                             $('.alert').delay('8000').css('display', 'none');
                             $('#contact-form').delay('5000').removeClass('nonactive');
                             $('#contact-form')[0].reset();
